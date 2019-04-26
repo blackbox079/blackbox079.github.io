@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GitHub&#43;Hexo搭建个人博客 - 个人博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="卷尾松鼠" /><meta name="description" content="个人博客搭建和相关配置。采用 Hexo 搭建，并部署到 GitHub Pages 。
+" /><meta name="keywords" content="Hugo, blog, blackbox079" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blackbox079.github.io/post/github-hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.3b14f964.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="GitHub&#43;Hexo搭建个人博客" />
+<meta property="og:description" content="个人博客搭建和相关配置。采用 Hexo 搭建，并部署到 GitHub Pages 。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blackbox079.github.io/post/github-hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" />
+<meta property="article:published_time" content="2019-04-20T22:06:19&#43;08:00"/>
+<meta property="article:modified_time" content="2019-04-20T22:06:19&#43;08:00"/>
+
+<meta itemprop="name" content="GitHub&#43;Hexo搭建个人博客">
+<meta itemprop="description" content="个人博客搭建和相关配置。采用 Hexo 搭建，并部署到 GitHub Pages 。">
+
+
+<meta itemprop="datePublished" content="2019-04-20T22:06:19&#43;08:00" />
+<meta itemprop="dateModified" content="2019-04-20T22:06:19&#43;08:00" />
+<meta itemprop="wordCount" content="2258">
+
+
+
+<meta itemprop="keywords" content="教程,Hexo," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GitHub&#43;Hexo搭建个人博客"/>
+<meta name="twitter:description" content="个人博客搭建和相关配置。采用 Hexo 搭建，并部署到 GitHub Pages 。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">卷尾松鼠</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">卷尾松鼠</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">GitHub&#43;Hexo搭建个人博客</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-04-20 </span>
+        <div class="post-category">
+            <a href="/categories/cs/"> CS </a>
+            </div>
+          <span class="more-meta"> 约 2258 字 </span>
+          <span class="more-meta"> 预计阅读 5 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#基础安装">基础安装</a>
+<ul>
+<li><a href="#安装-git-https-git-scm-com-downloads-和-node-js-https-nodejs-org-en">安装 <a href="https://git-scm.com/downloads">Git</a> 和 <a href="https://nodejs.org/en/">Node.js</a></a></li>
+<li><a href="#安装hexo">安装hexo</a></li>
+</ul></li>
+<li><a href="#hexo常用命令">hexo常用命令</a></li>
+<li><a href="#github-https-github-com-注册与设置"><a href="https://github.com">GitHub</a> 注册与设置</a>
+<ul>
+<li><a href="#github注册">GitHub注册</a></li>
+<li><a href="#新建仓库">新建仓库</a></li>
+<li><a href="#生成ssh-key并保存到github设置里">生成ssh key并保存到GitHub设置里</a>
+<ul>
+<li><a href="#生成ssh-key">生成SSH key</a></li>
+<li><a href="#添加ssh-key到github">添加SSH key到GitHub</a></li>
+<li><a href="#git全局配置">Git全局配置</a></li>
+<li><a href="#测试">测试</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#hexo设置">Hexo设置</a>
+<ul>
+<li><a href="#永久链接">永久链接</a></li>
+<li><a href="#设置rss">设置RSS</a></li>
+<li><a href="#添加搜索">添加搜索</a></li>
+<li><a href="#配置">配置</a></li>
+<li><a href="#压缩">压缩</a></li>
+<li><a href="#简化部署">简化部署</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>个人博客搭建和相关配置。采用 <a href="https://hexo.io/zh-cn/">Hexo</a> 搭建，并部署到 <a href="https://pages.github.com/">GitHub Pages</a> 。</p>
+
+<h2 id="基础安装">基础安装</h2>
+
+<h3 id="安装-git-https-git-scm-com-downloads-和-node-js-https-nodejs-org-en">安装 <a href="https://git-scm.com/downloads">Git</a> 和 <a href="https://nodejs.org/en/">Node.js</a></h3>
+
+<p>Windows平台上去官方下载安装包然后基本就一路点next就可以装好了，<a href="https://nodejs.org/en/">Node.js</a> 推荐下载LTS版本。</p>
+
+<p>我这边是Arch Linux系统，yay是包管理器。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">yay -S git nodejs <span class="c1"># 安装</span>
+node -v <span class="o">&amp;&amp;</span> npm -v <span class="c1"># 验证是否安装成功</span>
+npm config <span class="nb">set</span> registry https://registry.npm.taobao.org <span class="c1"># 设置npm使用淘宝镜像源</span>
+npm config get registry <span class="c1"># 查看是否成功设置</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="安装hexo">安装hexo</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">mkdir blog <span class="o">&amp;&amp;</span> <span class="nb">cd</span> blog <span class="c1"># 新建并切换到该文件夹</span>
+npm i -g hexo-cli <span class="c1"># 全局安装hexo模块</span>
+hexo init <span class="c1"># 用hexo初始化当前文件夹(该文件夹必须为空)</span>
+npm i --save hexo-deployer-git eslint <span class="c1"># 安装部署模块deployer，安装bebal-eslint依赖项eslint</span>
+npm audit fix <span class="c1"># 自动修复</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="hexo常用命令">hexo常用命令</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">hexo n <span class="s2">&#34;文章名&#34;</span> <span class="c1"># 新建</span>
+hexo clean <span class="c1"># 清除缓存</span>
+hexo g <span class="c1"># 编译</span>
+hexo s <span class="c1"># 本地预览</span>
+hexo d <span class="c1"># 部署到远端</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="github-https-github-com-注册与设置"><a href="https://github.com">GitHub</a> 注册与设置</h2>
+
+<h3 id="github注册">GitHub注册</h3>
+
+<p>打开 <a href="https://github.com">Github</a> ，点击右上角 <a href="https://github.com/join">Sign up</a> ，填写用户名邮箱和密码后创建账号。</p>
+
+<blockquote>
+<p>GitHub Pages是 用户名.github.io  ，所以用户名是很重要的哦。</p>
+</blockquote>
+
+<h3 id="新建仓库">新建仓库</h3>
+
+<p>点击右上角+号，选择 <code>New repository</code> <img src="https://i.loli.net/2019/04/23/5cbe7ddfda67b.png" alt="New repository" /></p>
+
+<p>填写仓库信息 <img src="https://i.loli.net/2019/04/23/5cbe7de00c7ed.png" alt="Create a new repository" />
+描述是可选填项，Public是公开该仓库，Private则是私人的。可勾选添加README文件。
+仓库名必须是 用户名.github.io 哦，这样可以自动设置Github Pages。 <img src="https://i.loli.net/2019/04/23/5cbe7feae0fa4.png" alt="Github Pages" /></p>
+
+<h3 id="生成ssh-key并保存到github设置里">生成ssh key并保存到GitHub设置里</h3>
+
+<p>为了比较方便地部署到Github Pages，可使用SSH上传。GitHub官方的教程在这里： <a href="https://help.github.com/en/articles/connecting-to-github-with-ssh">Connecting to GitHub with SSH</a></p>
+
+<h4 id="生成ssh-key">生成SSH key</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">ls ~/.ssh <span class="c1"># 查看是否已存在ssh key</span>
+mkdir ~/.ssh <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/.ssh <span class="c1"># 如果没有则创建并切换到该目录</span>
+ssh-keygen -t rsa -C <span class="s2">&#34;your_email@example.com&#34;</span> <span class="c1"># 生成ssh key，邮箱换成自己的。-t是指定密钥类型，默认是rsa，所以也可省略。-C是设置注释文字，比如邮箱</span>
+<span class="c1"># 然后输入文件名和密码2次，这一步也可回车三连全设为默认。默认的文件名为 id_rsa</span>
+clip &lt; ~/.ssh/id_rsa.pub <span class="c1"># 复制SSH key文件内容</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="添加ssh-key到github">添加SSH key到GitHub</h4>
+
+<p>打开GitHub，点击右上角头像，选择 <code>Settings</code> ， <img src="https://i.loli.net/2019/04/23/5cbe83dac95e3.png" alt="Github-Setting" /> 在左侧栏点 <code>SSH and GPG keys</code> ，在右边点 <code>New SSH key</code> 添加。(我这边打码了下) <img src="https://i.loli.net/2019/04/23/5cbe83a6bc695.png" alt="GitHub-SSH-keys" />
+Title随便填，在Key里粘贴刚才复制的内容。 <img src="https://i.loli.net/2019/04/23/5cbe8a07e1c28.png" alt="GitHub-new-ssh.png" /></p>
+
+<h4 id="git全局配置">Git全局配置</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">git config --global user.name <span class="s2">&#34;yourname&#34;</span> <span class="c1"># 配置用户名</span>
+git config --global user.email <span class="s2">&#34;youremail@email.com&#34;</span> <span class="c1"># 配置邮箱，建议用注册GitHub的邮箱</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="测试">测试</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">shh -T git@github.com <span class="c1"># 测试是否可用</span>
+yes <span class="c1">#首次会询问是否信任该网站</span>
+<span class="c1"># 如果ssh key 里创建了密码，则还需输入密码</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="hexo设置">Hexo设置</h2>
+
+<h3 id="永久链接">永久链接</h3>
+
+<p><code>npm i --save hexo-abbrlink</code> 然后修改Hexo配置文件_config.yml</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml">permalink<span class="p">:</span><span class="w"> </span>posts/<span class="p">:</span>abbrlink/<span class="w"> </span><span class="c">#url链接</span><span class="w">
+</span><span class="w"></span>permalink_defaults<span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c"># abbrlink config</span><span class="w">
+</span><span class="w"></span>abbrlink<span class="p">:</span><span class="w">
+</span><span class="w">  </span>alg<span class="p">:</span><span class="w"> </span>crc32<span class="w">  </span><span class="c">#support crc16(default) and crc32</span><span class="w">
+</span><span class="w">  </span>rep<span class="p">:</span><span class="w"> </span>hex<span class="w">    </span><span class="c">#support dec(default) and hex</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="设置rss">设置RSS</h3>
+
+<p><code>npm i --save hexo-generator-feed</code> 安装RSS模块，将其加入Hexo配置文件里的 <code>plugins</code> 。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml">plugins<span class="p">:</span><span class="w">
+</span><span class="w">  </span>hexo-generator-feed</code></pre></td></tr></table>
+</div>
+</div>
+<p>在 NexT的 <code>_config.yml</code> 里设置 <code>rss: ./atom.xml</code></p>
+
+<h3 id="添加搜索">添加搜索</h3>
+
+<p><code>npm i --save hexo-generator-searchdb</code> 安装模块，然后在hexo配置添加</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml">search<span class="p">:</span><span class="w">
+</span><span class="w"></span>path<span class="p">:</span><span class="w"> </span>search.xml<span class="w">
+</span><span class="w"></span>field<span class="p">:</span><span class="w"> </span>post<span class="w">
+</span><span class="w"></span>format<span class="p">:</span><span class="w"> </span>html<span class="w">
+</span><span class="w"></span>limit<span class="p">:</span><span class="w"> </span><span class="m">10000</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>修改NexT主题配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml">local_search<span class="p">:</span><span class="w">
+</span><span class="w">  </span>enable<span class="p">:</span><span class="w"> </span><span class="kc">true</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="配置">配置</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml"><span class="c"># Site</span><span class="w">
+</span><span class="w"></span>title<span class="p">:</span><span class="w"> </span>个人博客<span class="w"> </span><span class="c"># 网站标题</span><span class="w">
+</span><span class="w"></span>subtitle<span class="p">:</span><span class="w"> </span><span class="c"># 网站副标题</span><span class="w">
+</span><span class="w"></span>description<span class="p">:</span><span class="w"> </span><span class="c"># 网站描述</span><span class="w">
+</span><span class="w"></span>keywords<span class="p">:</span><span class="w">
+</span><span class="w"></span>author<span class="p">:</span><span class="w"> </span>Blackbox079<span class="w"> </span><span class="c"># 你的名字</span><span class="w">
+</span><span class="w"></span>language<span class="p">:</span><span class="w"> </span>zh-CN<span class="w"> </span><span class="c"># 网站语言</span><span class="w">
+</span><span class="w"></span>timezone<span class="p">:</span><span class="w"> </span>Asia/Shanghai<span class="w"> </span><span class="c"># 网站时区</span><span class="w">
+</span><span class="w"></span><span class="c"># URL</span><span class="w">
+</span><span class="w"></span>url<span class="p">:</span><span class="w"> </span>https<span class="p">:</span>//blackbox079.github.io/<span class="w"> </span><span class="c"># 地址</span><span class="w">
+</span><span class="w"></span>root<span class="p">:</span><span class="w"> </span>/<span class="w">
+</span><span class="w"></span>permalink<span class="p">:</span><span class="w"> </span>posts/<span class="p">:</span>abbrlink/<span class="w"> </span><span class="c">#url链接</span><span class="w">
+</span><span class="w"></span>permalink_defaults<span class="p">:</span><span class="w">
+</span><span class="w"></span><span class="c"># abbrlink config</span><span class="w">
+</span><span class="w"></span>abbrlink<span class="p">:</span><span class="w">
+</span><span class="w">  </span>alg<span class="p">:</span><span class="w"> </span>crc32<span class="w">  </span><span class="c">#support crc16(default) and crc32</span><span class="w">
+</span><span class="w">  </span>rep<span class="p">:</span><span class="w"> </span>hex<span class="w">    </span><span class="c">#support dec(default) and hex</span><span class="w">
+</span><span class="w"></span><span class="c"># Search 搜索功能</span><span class="w">
+</span><span class="w"></span>search<span class="p">:</span><span class="w">
+</span><span class="w"></span>path<span class="p">:</span><span class="w"> </span>search.xml<span class="w">
+</span><span class="w"></span>field<span class="p">:</span><span class="w"> </span>post<span class="w">
+</span><span class="w"></span>format<span class="p">:</span><span class="w"> </span>html<span class="w">
+</span><span class="w"></span>limit<span class="p">:</span><span class="w"> </span><span class="m">10000</span><span class="w">
+</span><span class="w"></span><span class="c"># Extensions 扩展</span><span class="w">
+</span><span class="w"></span>plugins<span class="p">:</span><span class="w"> </span><span class="c"># 插件</span><span class="w">
+</span><span class="w">  </span>hexo-generator-feed<span class="w">
+</span><span class="w"></span>theme<span class="p">:</span><span class="w"> </span>next<span class="w"> </span><span class="c"># 主题</span><span class="w">
+</span><span class="w"></span>feed<span class="p">:</span><span class="w"> </span><span class="c">#RSS</span><span class="w">
+</span><span class="w">  </span>type<span class="p">:</span><span class="w"> </span>atom<span class="w">
+</span><span class="w">  </span>path<span class="p">:</span><span class="w"> </span>atom.xml<span class="w">
+</span><span class="w">  </span>limit<span class="p">:</span><span class="w"> </span><span class="m">20</span><span class="w">
+</span><span class="w"></span><span class="c"># Deployment 部署</span><span class="w">
+</span><span class="w"></span>deploy<span class="p">:</span><span class="w">
+</span><span class="w">  </span>type<span class="p">:</span><span class="w"> </span>git<span class="w">
+</span><span class="w">  </span>repo<span class="p">:</span><span class="w"> </span>git@github.com<span class="p">:</span>blackbox079/blackbox079.github.io.git<span class="w">
+</span><span class="w">  </span>branch<span class="p">:</span><span class="w"> </span>master</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="压缩">压缩</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">npm i --save-dev gulp  gulp-htmlclean gulp-htmlmin gulp-clean-css gulp-imagemin gulp-uglify <span class="c1"># 安装压缩模块</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>在根目录添加配置文件 <code>gulpfile.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">const</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
+<span class="k">const</span> <span class="nx">htmlclean</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-htmlclean&#39;</span><span class="p">);</span>
+<span class="k">const</span> <span class="nx">htmlmin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-htmlmin&#39;</span><span class="p">);</span>
+<span class="k">const</span> <span class="nx">minifycss</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-clean-css&#39;</span><span class="p">);</span>
+<span class="k">const</span> <span class="nx">uglify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-uglify&#39;</span><span class="p">);</span>
+<span class="k">const</span> <span class="nx">imagemin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-imagemin&#39;</span><span class="p">);</span>
+
+<span class="c1">//压缩 public 目录内 html
+</span><span class="c1"></span><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;html&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;./public/**/*.html&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">htmlclean</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">htmlmin</span><span class="p">({</span>
+            <span class="nx">removeComments</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span><span class="c1">//清除 HTML 注释
+</span><span class="c1"></span>            <span class="nx">collapseWhitespace</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span><span class="c1">//压缩 HTML
+</span><span class="c1"></span>            <span class="nx">collapseBooleanAttributes</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span><span class="c1">//省略布尔属性的值 &lt;input checked=&#34;true&#34;/&gt; ==&gt; &lt;input /&gt;
+</span><span class="c1"></span>            <span class="nx">removeEmptyAttributes</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span><span class="c1">//删除所有空格作属性值 &lt;input id=&#34;&#34; /&gt; ==&gt; &lt;input /&gt;
+</span><span class="c1"></span>            <span class="nx">removeScriptTypeAttributes</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span><span class="c1">//删除 &lt;script&gt; 的 type=&#34;text/javascript&#34;
+</span><span class="c1"></span>            <span class="nx">removeStyleLinkTypeAttributes</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span><span class="c1">//删除 &lt;style&gt; 和 &lt;link&gt; 的 type=&#34;text/css&#34;
+</span><span class="c1"></span>            <span class="nx">minifyJS</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span><span class="c1">//压缩页面 JS
+</span><span class="c1"></span>            <span class="nx">minifyCSS</span><span class="o">:</span> <span class="kc">true</span><span class="c1">//压缩页面 CSS
+</span><span class="c1"></span>        <span class="p">}))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;./public&#39;</span><span class="p">))</span>
+<span class="p">});</span>
+
+<span class="c1">//压缩 public 目录内 css
+</span><span class="c1"></span><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;css&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;./public/**/*.css&#39;</span><span class="p">,</span> <span class="s1">&#39;!./public/**/*.min.css&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">minifycss</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;./public/css&#39;</span><span class="p">))</span>
+<span class="p">})</span>
+
+<span class="c1">//压缩 public 目录内 js
+</span><span class="c1"></span><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;js&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;./public/**/*.js&#39;</span><span class="p">,</span> <span class="s1">&#39;!./public/**/*.min.js&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">uglify</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;./public/js&#39;</span><span class="p">))</span>
+<span class="p">})</span>
+
+<span class="c1">// 压缩 public 目录下的所有 img： 这个采用默认配置
+</span><span class="c1"></span><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;./public/images/**/*.*&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">imagemin</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;./public/images&#39;</span><span class="p">))</span>
+<span class="p">})</span>
+
+<span class="c1">// 同上，压缩图片，这里采用了： 最大化压缩效果。
+</span><span class="c1"></span><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;img-aggressive&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;./public/images/**/*.*&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">imagemin</span><span class="p">(</span>
+            <span class="p">[</span><span class="nx">imagemin</span><span class="p">.</span><span class="nx">gifsicle</span><span class="p">({</span> <span class="s1">&#39;optimizationLevel&#39;</span><span class="o">:</span> <span class="mi">3</span> <span class="p">}),</span>
+            <span class="nx">imagemin</span><span class="p">.</span><span class="nx">jpegtran</span><span class="p">({</span> <span class="s1">&#39;progressive&#39;</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}),</span>
+            <span class="nx">imagemin</span><span class="p">.</span><span class="nx">optipng</span><span class="p">({</span> <span class="s1">&#39;optimizationLevel&#39;</span><span class="o">:</span> <span class="mi">7</span> <span class="p">}),</span>
+            <span class="nx">imagemin</span><span class="p">.</span><span class="nx">svgo</span><span class="p">()],</span>
+            <span class="p">{</span> <span class="s1">&#39;verbose&#39;</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;./public/images&#39;</span><span class="p">))</span>
+<span class="p">})</span>
+
+<span class="c1">// 设置默认任务，图片我会放外链，所以我就不压了
+</span><span class="c1"></span><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">series</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">parallel</span><span class="p">(</span><span class="s1">&#39;html&#39;</span><span class="p">,</span> <span class="s1">&#39;css&#39;</span><span class="p">,</span> <span class="s1">&#39;js&#39;</span><span class="p">)))</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>这里踩坑了，之前有装 <code>del</code> 这个模块，它会清理fontawesome，部署后图标就变为豆腐块，fontawesome是next主题的图标。</p>
+</blockquote>
+
+<h3 id="简化部署">简化部署</h3>
+
+<p>在 <code>package.json</code> 里加上</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;scripts&#34;</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nt">&#34;push&#34;</span><span class="p">:</span> <span class="s2">&#34;hexo clean &amp;&amp; hexo g &amp;&amp; gulp &amp;&amp; hexo d&#34;</span>
+  <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>也可把 <code>hexo g</code> 这一步放到 <code>gulpfile.js</code> 里</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">const</span> <span class="nx">Hexo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;hexo&#39;</span><span class="p">);</span>
+<span class="c1">//利用Hexo API 来生成博客内容， 效果和在命令行运行： hexo g 一样
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">hexo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Hexo</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">cwd</span><span class="p">(),</span> <span class="p">{});</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;generate&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">hexo</span><span class="p">.</span><span class="nx">init</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">hexo</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">&#39;generate&#39;</span><span class="p">,</span> <span class="p">{</span>
+            <span class="nx">watch</span><span class="o">:</span> <span class="kc">false</span>
+        <span class="p">});</span>
+    <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">hexo</span><span class="p">.</span><span class="nx">exit</span><span class="p">();</span>
+    <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">cb</span><span class="p">()</span>
+    <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+        <span class="nx">hexo</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">cb</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="p">})</span>
+<span class="p">})</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">series</span><span class="p">(</span><span class="s1">&#39;generate&#39;</span><span class="p">,</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">parallel</span><span class="p">(</span><span class="s1">&#39;html&#39;</span><span class="p">,</span> <span class="s1">&#39;css&#39;</span><span class="p">,</span> <span class="s1">&#39;js&#39;</span><span class="p">)))</span>
+<span class="err">#</span> <span class="nx">gulp默认任务添加</span> <span class="nx">hexo</span> <span class="nx">g</span> <span class="nx">这一步</span><span class="err">，</span><span class="nx">那么则可在</span> <span class="sb">`package.json`</span> <span class="nx">里省去这一步</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>这样可使用 <code>npm run push</code> 来部署。</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">卷尾松鼠</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-04-20
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+          <a href="/tags/hexo/">Hexo</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/hexo%E4%B8%BB%E9%A2%98%E4%B9%8Bnext%E8%AE%BE%E7%BD%AE/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Hexo主题之NexT设置</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/archlinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">
+            <span class="next-text nav-default">ArchLinux安装教程</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/blackbox079" class="iconfont icon-github" title="github"></a>
+  <a href="https://blackbox079.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">卷尾松鼠</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.8250a5c6.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

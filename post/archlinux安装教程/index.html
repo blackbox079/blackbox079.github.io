@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ArchLinux安装教程 - 个人博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="卷尾松鼠" /><meta name="description" content="在Windows10上安装Arch Linux组成双系统的教程(或者说是记录)。终于在虚拟机安装成功后就激情下单了u盘
+" /><meta name="keywords" content="Hugo, blog, blackbox079" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blackbox079.github.io/post/archlinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.3b14f964.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="ArchLinux安装教程" />
+<meta property="og:description" content="在Windows10上安装Arch Linux组成双系统的教程(或者说是记录)。终于在虚拟机安装成功后就激情下单了u盘" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blackbox079.github.io/post/archlinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" />
+<meta property="article:published_time" content="2018-10-29T23:18:05&#43;08:00"/>
+<meta property="article:modified_time" content="2018-10-29T23:18:05&#43;08:00"/>
+
+<meta itemprop="name" content="ArchLinux安装教程">
+<meta itemprop="description" content="在Windows10上安装Arch Linux组成双系统的教程(或者说是记录)。终于在虚拟机安装成功后就激情下单了u盘">
+
+
+<meta itemprop="datePublished" content="2018-10-29T23:18:05&#43;08:00" />
+<meta itemprop="dateModified" content="2018-10-29T23:18:05&#43;08:00" />
+<meta itemprop="wordCount" content="1982">
+
+
+
+<meta itemprop="keywords" content="教程,Linux," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ArchLinux安装教程"/>
+<meta name="twitter:description" content="在Windows10上安装Arch Linux组成双系统的教程(或者说是记录)。终于在虚拟机安装成功后就激情下单了u盘"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">卷尾松鼠</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">卷尾松鼠</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">ArchLinux安装教程</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-10-29 </span>
+        <div class="post-category">
+            <a href="/categories/cs/"> CS </a>
+            </div>
+          <span class="more-meta"> 约 1982 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#准备工作">准备工作</a>
+<ul>
+<li><a href="#数据备份">数据备份</a></li>
+<li><a href="#关闭快速启动">关闭快速启动</a></li>
+<li><a href="#磁盘准备">磁盘准备</a></li>
+</ul></li>
+<li><a href="#制作启动u盘">制作启动u盘</a></li>
+<li><a href="#关闭安全启动">关闭安全启动</a></li>
+<li><a href="#u盘启动">u盘启动</a></li>
+<li><a href="#开始安装">开始安装</a>
+<ul>
+<li><a href="#验证引导方式">验证引导方式</a></li>
+<li><a href="#联网">联网</a></li>
+<li><a href="#更新系统时间">更新系统时间</a></li>
+<li><a href="#分区-格式化-挂载">分区&amp;格式化&amp;挂载</a>
+<ul>
+<li><a href="#分区">分区</a></li>
+<li><a href="#格式化">格式化</a></li>
+<li><a href="#挂载分区">挂载分区</a></li>
+</ul></li>
+<li><a href="#选择镜像源">选择镜像源</a></li>
+</ul></li>
+<li><a href="#安装基本系统">安装基本系统</a></li>
+<li><a href="#配置系统">配置系统</a>
+<ul>
+<li><a href="#fstab">Fstab</a>
+<ul>
+<li><a href="#chroot">Chroot</a></li>
+<li><a href="#设置时区">设置时区</a></li>
+<li><a href="#提前安装软件">提前安装软件</a></li>
+<li><a href="#本地化-设置locale">本地化（设置Locale）</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>在Windows10上安装Arch Linux组成双系统的教程(或者说是记录)。终于在虚拟机安装成功后就激情下单了u盘</p>
+
+<p>参考教程：
+- <a href="https://wiki.archlinux.org/index.php/Main_page">官方Wiki</a>
+- <a href="https://www.viseator.com/2017/05/17/arch_install/">以官方Wiki的方式安装ArchLinux</a></p>
+
+<p>概况：联想的本子，A卡，单硬盘。已装有win10，版本是1803。现装Arch Linux，EFI启动。</p>
+
+<p>如果本文有错漏之处，也请指正，感谢！</p>
+
+<h2 id="准备工作">准备工作</h2>
+
+<ol>
+<li><strong>u盘</strong> : 从u盘启动</li>
+<li><strong>Arch Linux的iso文件</strong> 地理位置距离较近，下载速度可能能快点
+
+<ul>
+<li><a href="https://www.archlinux.org/download/">官网下载</a></li>
+<li><a href="https://mirrors.zju.edu.cn/archlinux/iso/">浙大镜像站</a></li>
+<li><a href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/">清华镜像站</a></li>
+<li><a href="http://mirror.lzu.edu.cn/archlinux/iso/">兰大镜像站</a></li>
+<li><a href="https://mirrors.ustc.edu.cn/archlinux/iso/">国科大镜像站</a></li>
+<li><a href="https://mirror.bjtu.edu.cn/disk3/archlinux/iso/">北京交大镜像站</a></li>
+<li><a href="http://ftp.sjtu.edu.cn/archlinux/iso/">上海交大镜像站</a></li>
+<li><a href="https://mirrors.neusoft.edu.cn/archlinux/iso/">大连东软镜像站</a></li>
+<li><a href="http://mirrors.163.com/archlinux/iso/">网易镜像站</a></li>
+</ul></li>
+<li><strong><a href="https://sourceforge.net/projects/usbwriter/files/">USBWriter</a></strong></li>
+</ol>
+
+<h3 id="数据备份">数据备份</h3>
+
+<p>重要数据文件等应进行备份。</p>
+
+<h3 id="关闭快速启动">关闭快速启动</h3>
+
+<p>快速启动会影响Grub开机引导过程，故需将其关闭。</p>
+
+<ol>
+<li>快捷键 <strong>Win+X</strong> 菜单</li>
+<li>选择 <strong>电源选项</strong></li>
+<li><strong>选择电源按钮的功能</strong> <img src="https://i.loli.net/2018/10/29/5bd6c15540c4e.png" alt="PowerButton.png" /></li>
+<li><em>更改当前不可用的设置</em> ，然后 <strong>取消勾选快速启动</strong> 后 <em>保存修改</em> <img src="https://i.loli.net/2018/11/02/5bdc03f15869c.png" alt="PowerOptions.png" /></li>
+</ol>
+
+<h3 id="磁盘准备">磁盘准备</h3>
+
+<p><em>Win+X</em> 选择 <em>磁盘管理</em> ，考虑准备分配多少空间给Linux系统，在适当的分区右键选择 <em>压缩卷</em> ，填写你的数值（以M为单位），等压缩完成后即可看到一个新的未分配空间。</p>
+
+<h2 id="制作启动u盘">制作启动u盘</h2>
+
+<p>下载iso文件，安装好 <em><a href="https://sourceforge.net/projects/usbwriter/files/">USBWriter</a></em> 后将其打开，将u盘连接上电脑 <img src="https://i.loli.net/2018/10/29/5bd6c155c41b9.png" alt="USBWriter.png" />
+完成后可能电脑会看不到u盘，但它其实是变成了这种……后续从u盘启动时没遇到问题。 <img src="https://i.loli.net/2018/11/02/5bdc03f0dcf0e.png" alt="UsbDevice.png" /></p>
+
+<blockquote>
+<p>一开始我是选择了使用UltraISO的，但选择从u盘启动时出现了无限重启，只好回Windows重新制作启动盘。</p>
+</blockquote>
+
+<h2 id="关闭安全启动">关闭安全启动</h2>
+
+<p>进入<strong>BIOS</strong> ， <img src="https://i.loli.net/2018/11/02/5bdc03f16c590.jpeg" alt="BIOSSetup.jpeg" /> 按方向键移到 <em>Security</em> 选项卡，将 <em>Secure Boot</em> 修改为 <em>Disabled</em> 。 <img src="https://i.loli.net/2018/11/02/5bdc03f16d380.jpeg" alt="SecureBoot.jpeg" /></p>
+
+<blockquote>
+<p>不同电脑进入BIOS的方式有所不同，我手上的联想本子是机身有一个凹进去的小孔，关机后用牙签或笔芯之类较细的物品戳一下即可打开“Novo Button Menu”菜单</p>
+</blockquote>
+
+<p>方向键移动到 <em>Boot</em> 选项卡， <em>Boot Mode</em> 即为启动方式。 <img src="https://i.loli.net/2018/10/31/5bd9600022467.jpeg" alt="BootMode.jpeg" /> 较新的电脑基本都是EFI启动，所以就是顺手看一下。</p>
+
+<p><em>F10</em> 然后输入 <em>Y</em> ，退出并保存设置。</p>
+
+<hr />
+
+<h2 id="u盘启动">u盘启动</h2>
+
+<p>进入 <strong>Boot Menu</strong> <img src="https://i.loli.net/2018/10/31/5bd9629e3e840.jpeg" alt="BootMenu.jpeg" /> 然后选择从u盘启动。</p>
+
+<p>正常情况就进入Arch Linux的界面啦，一个超大的LOGO，下边有几个启动选项，默认是 <strong>Boot Arch Linux(x86_64)</strong> （32位的电脑可能不一样），几秒后自动加载进入命令行安装界面。</p>
+
+<h2 id="开始安装">开始安装</h2>
+
+<blockquote>
+<p>GitHub上也有安装脚本，想简单点的话可以试试。</p>
+</blockquote>
+
+<h3 id="验证引导方式">验证引导方式</h3>
+
+<p>主要分为EFI+GPT和BIOS(LEGACY)+MBR，<code>ls /sys/firmware/efi/efivars</code> 如果说目录不存在则可能是以BIOS启动的。</p>
+
+<p>一个再保险点的方法， <code>fdisk -l</code> 查看分区表，EFI启动的话， <em>Disklable type</em> 的属性为 <em>gpt</em> 并且有一个 <em>EFI System</em> 小分区。 <img src="https://i.loli.net/2018/10/30/5bd7bfd49d171.png" alt="fisk-l.png" /></p>
+
+<blockquote>
+<p>我们刚才在BIOS里也查看了启动方式，不同的启动方式的分区挂载和Grub安装会有区别，所以需要确认呢。</p>
+</blockquote>
+
+<h3 id="联网">联网</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">dhcpcd <span class="c1"># 有线</span>
+wifi-menu <span class="c1"># wifi</span>
+ping -c <span class="m">5</span> baidu.com <span class="c1"># 测试网络</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="更新系统时间">更新系统时间</h3>
+
+<p><code>timedatectl set-ntp true</code></p>
+
+<h3 id="分区-格式化-挂载">分区&amp;格式化&amp;挂载</h3>
+
+<h4 id="分区">分区</h4>
+
+<p><code>fdisk -l</code> 能看到磁盘（包括硬盘和u盘）。<em>Disk</em> 磁盘名称，<em>Device</em> 是分区。我这边的话是 <em>/dev/sda</em> 是我的硬盘，<em>/dev/sda1</em> 是EFI分区。挂载时把 <em>/boot</em> 挂载到EFI分区。</p>
+
+<p>如果是在一块全新的硬盘安装，那么还需要创建引导分区的。EFI启动要求硬盘里必须有这个分区。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">fdisk /dev/sda <span class="c1"># sda替换为要操作的磁盘</span>
+n <span class="c1"># 新建分区 选择序号和起始扇区都可以直接回车，也就是回车两次，然后输入结束扇区</span>
++20g <span class="c1">#设置该分区空间，大小自定，然后继续新建分区直到完成分区</span>
+p <span class="c1">#查看分区情况</span>
+w <span class="c1">#写入磁盘</span>
+q <span class="c1">#退出fdisk</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>fdisk -l</code> 时不能看到未分配的空间，但它们是存在的。可以给最后一个分区分配所有剩余空间。</p>
+
+<p>安装完成后可能会提示逻辑分区和物理分区不一致，到时修复一下就行。</p>
+
+<h4 id="格式化">格式化</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">mkfs.ext4 /dev/sdax <span class="c1">#sdax替换为要格式化的分区，将创建的分区格式化为ext4文件系统</span>
+<span class="c1"># 如果创建了交换分区</span>
+mkswap /dev/sdax <span class="c1">#格式化为交换分区</span>
+swapon /dev/sdax <span class="c1">#启用交换分区</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="挂载分区">挂载分区</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">mount /dev/sdax /mnt <span class="c1">#sdax替换为根分区，必须先挂载根分区</span>
+mkdir /mnt/boot /mnt/home /mnt/var <span class="c1">#创建需挂载的目录</span>
+mount /dev/sda1 /mnt/boot <span class="c1">#将引导分区挂载到boot</span>
+<span class="c1"># 再依次挂载 | 若有交换分区启用即可，不用挂载</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="选择镜像源">选择镜像源</h3>
+
+<p>官方源速度不是很稳定距离也较远，可以选择离我们更近的镜像源。使用nano打开源列表（nano是自带的，也可自行安装其他编辑器来打开它） <code>nano /etc/pacman.d/mirrorlist</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 在头部注释之后添加镜像源</span>
+<span class="c1"># zju</span>
+<span class="nv">Server</span> <span class="o">=</span> https://mirrors.zju.edu.cn/archlinux/<span class="nv">$repo</span>/os/<span class="nv">$arch</span>
+<span class="c1"># ustc</span>
+<span class="nv">Server</span> <span class="o">=</span> https://mirrors.ustc.edu.cn/archlinux/<span class="nv">$repo</span>/os/<span class="nv">$arch</span>
+<span class="c1"># tsinghua</span>
+<span class="nv">Server</span> <span class="o">=</span> https://mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="nv">$repo</span>/os/<span class="nv">$arch</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><em>Ctrl+O</em> 写入， <em>Ctrl+X</em> 离开</p>
+
+<h2 id="安装基本系统">安装基本系统</h2>
+
+<p><code>pacstrap /mnt base base-devel</code> 使用 <em>pacstrap</em> 脚本安装基础包。</p>
+
+<h2 id="配置系统">配置系统</h2>
+
+<h3 id="fstab">Fstab</h3>
+
+<p><code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code> 生成fstab文件。执行完请检查一下生成的/mnt/etc/fstab文件是否正确。</p>
+
+<p><code>cat /mnt/etc/fstab</code> 检查分区和挂载是否正确。</p>
+
+<h4 id="chroot">Chroot</h4>
+
+<p><code>arch-chroot /mnt</code> 执行这步之后，我们的操作都相当于在磁盘上的新装的系统中进行。</p>
+
+<h4 id="设置时区">设置时区</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+hwclock --systohc <span class="c1">#硬件时间，运行hwclock以生成/etc/adjtime</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="提前安装软件">提前安装软件</h4>
+
+<p><code>pacman -S git vim zsh ntf-3g dialog wpa_supplicant networkmanager</code></p>
+
+<p>安装 <em>git</em> , <em>vim</em> , <em>zsh</em> 和一些必须的包。</p>
+
+<h4 id="本地化-设置locale">本地化（设置Locale）</h4>
+
+<p><code>vim /etc/locale.gen</code></p>
+
+<p>找到 <em>zh_CN.UTF-8 UTF-8</em>  <em>zh_HK.UTF-8 UTF-8</em> <em>zh_TW.UTF-8 UTF-8</em>  和<em>en_US.UTF-8 UTF-8</em> 这四行，去掉行首的#号，保存并退出。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># vim使用</span>
+:数字 <span class="c1"># 跳转到该行</span>
+i <span class="c1"># 光标之前插入</span>
+I <span class="c1"># 光标所在行的行首插入</span>
+a <span class="c1"># 光标之后插入</span>
+A <span class="c1"># 光标所在行的行尾插入</span>
+Esc <span class="c1"># 退出插入模式</span>
+:wq <span class="c1"># 保存退出</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>locale-gen</code> 生成/etc/locale.gen文件</p>
+
+<p><code>vim /etc/locale.conf</code> 添加 <em>LANG=en_US.UTF-8</em></p>
+
+<hr />
+
+<p>未完待续</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">卷尾松鼠</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2018-10-29
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+          <a href="/tags/linux/">Linux</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/github-hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">GitHub&#43;Hexo搭建个人博客</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/blackbox079" class="iconfont icon-github" title="github"></a>
+  <a href="https://blackbox079.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">卷尾松鼠</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.8250a5c6.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

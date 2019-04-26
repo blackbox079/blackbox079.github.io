@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://blackbox079.github.io/sitemap.xml

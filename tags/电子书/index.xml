@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>电子书 on 个人博客</title>
+    <link>https://blackbox079.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/</link>
+    <description>Recent content in 电子书 on 个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 24 Apr 2019 17:44:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://blackbox079.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>EPUB电子书制作</title>
+      <link>https://blackbox079.github.io/post/epub%E7%94%B5%E5%AD%90%E4%B9%A6%E5%88%B6%E4%BD%9C/</link>
+      <pubDate>Wed, 24 Apr 2019 17:44:58 +0800</pubDate>
+      
+      <guid>https://blackbox079.github.io/post/epub%E7%94%B5%E5%AD%90%E4%B9%A6%E5%88%B6%E4%BD%9C/</guid>
+      <description>&lt;p&gt;因为希望提高阅读体验，而尝试自行制作epub文档，了解不算多，后续会继续完善。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

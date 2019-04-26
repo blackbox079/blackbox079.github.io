@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CS on 个人博客</title>
+    <link>https://blackbox079.github.io/categories/cs/</link>
+    <description>Recent content in CS on 个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 21 Apr 2019 23:00:15 +0800</lastBuildDate>
+    
+	<atom:link href="https://blackbox079.github.io/categories/cs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hexo主题之NexT设置</title>
+      <link>https://blackbox079.github.io/post/hexo%E4%B8%BB%E9%A2%98%E4%B9%8Bnext%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Sun, 21 Apr 2019 23:00:15 +0800</pubDate>
+      
+      <guid>https://blackbox079.github.io/post/hexo%E4%B8%BB%E9%A2%98%E4%B9%8Bnext%E8%AE%BE%E7%BD%AE/</guid>
+      <description>&lt;p&gt;Hexo有很多的 &lt;a href=&#34;https://hexo.io/themes/&#34;&gt;主题&lt;/a&gt; ，其中， &lt;a href=&#34;https://github.com/theme-next/hexo-theme-next&#34;&gt;NexT&lt;/a&gt; 的完成度是比较高的。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/theme-next/hexo-theme-next&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://theme-next.org/&#34;&gt;官网&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>GitHub&#43;Hexo搭建个人博客</title>
+      <link>https://blackbox079.github.io/post/github-hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sat, 20 Apr 2019 22:06:19 +0800</pubDate>
+      
+      <guid>https://blackbox079.github.io/post/github-hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>&lt;p&gt;个人博客搭建和相关配置。采用 &lt;a href=&#34;https://hexo.io/zh-cn/&#34;&gt;Hexo&lt;/a&gt; 搭建，并部署到 &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; 。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ArchLinux安装教程</title>
+      <link>https://blackbox079.github.io/post/archlinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Mon, 29 Oct 2018 23:18:05 +0800</pubDate>
+      
+      <guid>https://blackbox079.github.io/post/archlinux%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</guid>
+      <description>&lt;p&gt;在Windows10上安装Arch Linux组成双系统的教程(或者说是记录)。终于在虚拟机安装成功后就激情下单了u盘&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
