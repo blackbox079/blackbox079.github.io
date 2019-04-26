@@ -1,0 +1,317 @@
+<!DOCTYPE html><html class="theme-next gemini use-motion" lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><script src="/lib/pace/pace.min.js?v=1.0.2"></script><link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2"><link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"><link rel="stylesheet" href="/css/main.css?v=7.1.0"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0"><link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222"><script id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Gemini",version:"7.1.0",sidebar:{position:"left",display:"post",offset:12,onmobile:!1,dimmer:!1},back2top:!0,back2top_sidebar:!1,fancybox:!1,fastclick:!1,lazyload:!1,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><meta name="description" content="在Windows10上安装Arch Linux组成双系统的教程(或者说是记录)。终于在虚拟机安装成功后就激情下单了u盘"><meta name="keywords" content="教程,Linux"><meta property="og:type" content="article"><meta property="og:title" content="ArchLinux安装教程"><meta property="og:url" content="https://blackbox079.github.io/posts/a5e4683b/index.html"><meta property="og:site_name" content="个人博客"><meta property="og:description" content="在Windows10上安装Arch Linux组成双系统的教程(或者说是记录)。终于在虚拟机安装成功后就激情下单了u盘"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://i.loli.net/2018/10/29/5bd6c15540c4e.png"><meta property="og:image" content="https://i.loli.net/2018/11/02/5bdc03f15869c.png"><meta property="og:image" content="https://i.loli.net/2018/10/29/5bd6c155c41b9.png"><meta property="og:image" content="https://i.loli.net/2018/11/02/5bdc03f0dcf0e.png"><meta property="og:image" content="https://i.loli.net/2018/11/02/5bdc03f16c590.jpeg"><meta property="og:image" content="https://i.loli.net/2018/11/02/5bdc03f16d380.jpeg"><meta property="og:image" content="https://i.loli.net/2018/10/31/5bd9600022467.jpeg"><meta property="og:image" content="https://i.loli.net/2018/10/31/5bd9629e3e840.jpeg"><meta property="og:image" content="https://i.loli.net/2018/10/30/5bd7bfd49d171.png"><meta property="og:updated_time" content="2019-04-24T15:13:02.977Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="ArchLinux安装教程"><meta name="twitter:description" content="在Windows10上安装Arch Linux组成双系统的教程(或者说是记录)。终于在虚拟机安装成功后就激情下单了u盘"><meta name="twitter:image" content="https://i.loli.net/2018/10/29/5bd6c15540c4e.png"><link rel="alternate" href="/./atom.xml" title="个人博客" type="application/atom+xml"><link rel="canonical" href="https://blackbox079.github.io/posts/a5e4683b/"><script id="page.configurations">CONFIG.page={sidebar:""}</script><title>ArchLinux安装教程 | 个人博客</title><noscript><style>.sidebar-inner,.use-motion .brand,.use-motion .collection-title,.use-motion .comments,.use-motion .menu-item,.use-motion .motion-element,.use-motion .pagination,.use-motion .post-block,.use-motion .post-body,.use-motion .post-header{opacity:initial}.use-motion .logo,.use-motion .site-subtitle,.use-motion .site-title{opacity:initial;top:initial}.use-motion .logo-line-before i{left:initial}.use-motion .logo-line-after i{right:initial}</style></noscript></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">个人博客</span><span class="logo-line-after"><i></i></span></a></div></div><div class="site-nav-toggle"><button aria-label="切换导航栏"><span class="btn-bar"></span><span class="btn-bar"></span><span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i></span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"><input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://blackbox079.github.io/posts/a5e4683b/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="Blackbox079"><meta itemprop="description" content><meta itemprop="image" content="/images/avatar.gif"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="个人博客"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">ArchLinux安装教程</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建时间：2018-10-29 23:18:05" itemprop="dateCreated datePublished" datetime="2018-10-29T23:18:05+08:00">2018-10-29</time> <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-calendar-check-o"></i></span> <span class="post-meta-item-text">更新于</span> <time title="修改时间：2019-04-24 23:13:02" itemprop="dateModified" datetime="2019-04-24T23:13:02+08:00">2019-04-24</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span></span> <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i> 阅读次数：<span class="busuanzi-value" id="busuanzi_value_page_pv"></span></span></div></header><div class="post-body" itemprop="articleBody"><p>在Windows10上安装Arch Linux组成双系统的教程(或者说是记录)。终于在虚拟机安装成功后就激情下单了u盘</p><a id="more"></a><p>参考教程：</p><ul><li><a href="https://wiki.archlinux.org/index.php/Main_page" target="_blank" rel="noopener">官方Wiki</a></li><li><a href="https://www.viseator.com/2017/05/17/arch_install/" target="_blank" rel="noopener">以官方Wiki的方式安装ArchLinux</a></li></ul><p>概况：联想的本子，A卡，单硬盘。已装有win10，版本是1803。现装Arch Linux，EFI启动。</p><p>如果本文有错漏之处，也请指正，感谢！</p><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol><li><strong>u盘</strong> : 从u盘启动</li><li><strong>Arch Linux的iso文件</strong> 地理位置距离较近，下载速度可能能快点<ul><li><a href="https://www.archlinux.org/download/" target="_blank" rel="noopener">官网下载</a></li><li><a href="https://mirrors.zju.edu.cn/archlinux/iso/" target="_blank" rel="noopener">浙大镜像站</a></li><li><a href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/" target="_blank" rel="noopener">清华镜像站</a></li><li><a href="http://mirror.lzu.edu.cn/archlinux/iso/" target="_blank" rel="noopener">兰大镜像站</a></li><li><a href="https://mirrors.ustc.edu.cn/archlinux/iso/" target="_blank" rel="noopener">国科大镜像站</a></li><li><a href="https://mirror.bjtu.edu.cn/disk3/archlinux/iso/" target="_blank" rel="noopener">北京交大镜像站</a></li><li><a href="http://ftp.sjtu.edu.cn/archlinux/iso/" target="_blank" rel="noopener">上海交大镜像站</a></li><li><a href="https://mirrors.neusoft.edu.cn/archlinux/iso/" target="_blank" rel="noopener">大连东软镜像站</a></li><li><a href="http://mirrors.163.com/archlinux/iso/" target="_blank" rel="noopener">网易镜像站</a></li></ul></li><li><strong><a href="https://sourceforge.net/projects/usbwriter/files/" target="_blank" rel="noopener">USBWriter</a></strong></li></ol><h3 id="数据备份"><a href="#数据备份" class="headerlink" title="数据备份"></a>数据备份</h3><p>重要数据文件等应进行备份。</p><h3 id="关闭快速启动"><a href="#关闭快速启动" class="headerlink" title="关闭快速启动"></a>关闭快速启动</h3><p>快速启动会影响Grub开机引导过程，故需将其关闭。</p><ol><li>快捷键 <strong>Win+X</strong> 菜单</li><li>选择 <strong>电源选项</strong></li><li><strong>选择电源按钮的功能</strong> <img src="https://i.loli.net/2018/10/29/5bd6c15540c4e.png" alt="PowerButton.png"></li><li><em>更改当前不可用的设置</em> ，然后 <strong>取消勾选快速启动</strong> 后 <em>保存修改</em> <img src="https://i.loli.net/2018/11/02/5bdc03f15869c.png" alt="PowerOptions.png"></li></ol><h3 id="磁盘准备"><a href="#磁盘准备" class="headerlink" title="磁盘准备"></a>磁盘准备</h3><p><em>Win+X</em> 选择 <em>磁盘管理</em> ，考虑准备分配多少空间给Linux系统，在适当的分区右键选择 <em>压缩卷</em> ，填写你的数值（以M为单位），等压缩完成后即可看到一个新的未分配空间。</p><h2 id="制作启动u盘"><a href="#制作启动u盘" class="headerlink" title="制作启动u盘"></a>制作启动u盘</h2><p>下载iso文件，安装好 <em><a href="https://sourceforge.net/projects/usbwriter/files/" target="_blank" rel="noopener">USBWriter</a></em> 后将其打开，将u盘连接上电脑 <img src="https://i.loli.net/2018/10/29/5bd6c155c41b9.png" alt="USBWriter.png"><br>完成后可能电脑会看不到u盘，但它其实是变成了这种……后续从u盘启动时没遇到问题。 <img src="https://i.loli.net/2018/11/02/5bdc03f0dcf0e.png" alt="UsbDevice.png"></p><blockquote><p>一开始我是选择了使用UltraISO的，但选择从u盘启动时出现了无限重启，只好回Windows重新制作启动盘。</p></blockquote><h2 id="关闭安全启动"><a href="#关闭安全启动" class="headerlink" title="关闭安全启动"></a>关闭安全启动</h2><p>进入<strong>BIOS</strong> ， <img src="https://i.loli.net/2018/11/02/5bdc03f16c590.jpeg" alt="BIOSSetup.jpeg"> 按方向键移到 <em>Security</em> 选项卡，将 <em>Secure Boot</em> 修改为 <em>Disabled</em> 。 <img src="https://i.loli.net/2018/11/02/5bdc03f16d380.jpeg" alt="SecureBoot.jpeg"></p><blockquote><p>不同电脑进入BIOS的方式有所不同，我手上的联想本子是机身有一个凹进去的小孔，关机后用牙签或笔芯之类较细的物品戳一下即可打开“Novo Button Menu”菜单</p></blockquote><p>方向键移动到 <em>Boot</em> 选项卡， <em>Boot Mode</em> 即为启动方式。 <img src="https://i.loli.net/2018/10/31/5bd9600022467.jpeg" alt="BootMode.jpeg"> 较新的电脑基本都是EFI启动，所以就是顺手看一下。</p><p><em>F10</em> 然后输入 <em>Y</em> ，退出并保存设置。</p><hr><h2 id="u盘启动"><a href="#u盘启动" class="headerlink" title="u盘启动"></a>u盘启动</h2><p>进入 <strong>Boot Menu</strong> <img src="https://i.loli.net/2018/10/31/5bd9629e3e840.jpeg" alt="BootMenu.jpeg"> 然后选择从u盘启动。</p><p>正常情况就进入Arch Linux的界面啦，一个超大的LOGO，下边有几个启动选项，默认是 <strong>Boot Arch Linux(x86_64)</strong> （32位的电脑可能不一样），几秒后自动加载进入命令行安装界面。</p><h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><blockquote><p>GitHub上也有安装脚本，想简单点的话可以试试。</p></blockquote><h3 id="验证引导方式"><a href="#验证引导方式" class="headerlink" title="验证引导方式"></a>验证引导方式</h3><p>主要分为EFI+GPT和BIOS(LEGACY)+MBR，<code>ls /sys/firmware/efi/efivars</code> 如果说目录不存在则可能是以BIOS启动的。</p><p>一个再保险点的方法， <code>fdisk -l</code> 查看分区表，EFI启动的话， <em>Disklable type</em> 的属性为 <em>gpt</em> 并且有一个 <em>EFI System</em> 小分区。 <img src="https://i.loli.net/2018/10/30/5bd7bfd49d171.png" alt="fisk-l.png"></p><blockquote><p>我们刚才在BIOS里也查看了启动方式，不同的启动方式的分区挂载和Grub安装会有区别，所以需要确认呢。</p></blockquote><h3 id="联网"><a href="#联网" class="headerlink" title="联网"></a>联网</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dhcpcd # 有线</span><br><span class="line">wifi-menu # wifi</span><br><span class="line">ping -c 5 baidu.com # 测试网络</span><br></pre></td></tr></table></figure><h3 id="更新系统时间"><a href="#更新系统时间" class="headerlink" title="更新系统时间"></a>更新系统时间</h3><p><code>timedatectl set-ntp true</code></p><h3 id="分区-amp-格式化-amp-挂载"><a href="#分区-amp-格式化-amp-挂载" class="headerlink" title="分区&amp;格式化&amp;挂载"></a>分区&amp;格式化&amp;挂载</h3><h4 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h4><p><code>fdisk -l</code> 能看到磁盘（包括硬盘和u盘）。<em>Disk</em> 磁盘名称，<em>Device</em> 是分区。我这边的话是 <em>/dev/sda</em> 是我的硬盘，<em>/dev/sda1</em> 是EFI分区。挂载时把 <em>/boot</em> 挂载到EFI分区。</p><p>如果是在一块全新的硬盘安装，那么还需要创建引导分区的。EFI启动要求硬盘里必须有这个分区。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fdisk /dev/sda # sda替换为要操作的磁盘</span><br><span class="line">n # 新建分区 选择序号和起始扇区都可以直接回车，也就是回车两次，然后输入结束扇区</span><br><span class="line">+20g #设置该分区空间，大小自定，然后继续新建分区直到完成分区</span><br><span class="line">p #查看分区情况</span><br><span class="line">w #写入磁盘</span><br><span class="line">q #退出fdisk</span><br></pre></td></tr></table></figure><p><code>fdisk -l</code> 时不能看到未分配的空间，但它们是存在的。可以给最后一个分区分配所有剩余空间。</p><p>安装完成后可能会提示逻辑分区和物理分区不一致，到时修复一下就行。</p><h4 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/sdax #sdax替换为要格式化的分区，将创建的分区格式化为ext4文件系统</span><br><span class="line"><span class="meta">#</span> 如果创建了交换分区</span><br><span class="line">mkswap /dev/sdax #格式化为交换分区</span><br><span class="line">swapon /dev/sdax #启用交换分区</span><br></pre></td></tr></table></figure><h4 id="挂载分区"><a href="#挂载分区" class="headerlink" title="挂载分区"></a>挂载分区</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sdax /mnt #sdax替换为根分区，必须先挂载根分区</span><br><span class="line">mkdir /mnt/boot /mnt/home /mnt/var #创建需挂载的目录</span><br><span class="line">mount /dev/sda1 /mnt/boot #将引导分区挂载到boot</span><br><span class="line"><span class="meta">#</span> 再依次挂载 | 若有交换分区启用即可，不用挂载</span><br></pre></td></tr></table></figure><h3 id="选择镜像源"><a href="#选择镜像源" class="headerlink" title="选择镜像源"></a>选择镜像源</h3><p>官方源速度不是很稳定距离也较远，可以选择离我们更近的镜像源。使用nano打开源列表（nano是自带的，也可自行安装其他编辑器来打开它） <code>nano /etc/pacman.d/mirrorlist</code></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 在头部注释之后添加镜像源</span><br><span class="line"><span class="meta">#</span> zju</span><br><span class="line">Server = https://mirrors.zju.edu.cn/archlinux/$repo/os/$arch</span><br><span class="line"><span class="meta">#</span> ustc</span><br><span class="line">Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</span><br><span class="line"><span class="meta">#</span> tsinghua</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch</span><br></pre></td></tr></table></figure><p><em>Ctrl+O</em> 写入， <em>Ctrl+X</em> 离开</p><h2 id="安装基本系统"><a href="#安装基本系统" class="headerlink" title="安装基本系统"></a>安装基本系统</h2><p><code>pacstrap /mnt base base-devel</code> 使用 <em>pacstrap</em> 脚本安装基础包。</p><h2 id="配置系统"><a href="#配置系统" class="headerlink" title="配置系统"></a>配置系统</h2><h3 id="Fstab"><a href="#Fstab" class="headerlink" title="Fstab"></a>Fstab</h3><p><code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code> 生成fstab文件。执行完请检查一下生成的/mnt/etc/fstab文件是否正确。</p><p><code>cat /mnt/etc/fstab</code> 检查分区和挂载是否正确。</p><h4 id="Chroot"><a href="#Chroot" class="headerlink" title="Chroot"></a>Chroot</h4><p><code>arch-chroot /mnt</code> 执行这步之后，我们的操作都相当于在磁盘上的新装的系统中进行。</p><h4 id="设置时区"><a href="#设置时区" class="headerlink" title="设置时区"></a>设置时区</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br><span class="line">hwclock --systohc #硬件时间，运行hwclock以生成/etc/adjtime</span><br></pre></td></tr></table></figure><h4 id="提前安装软件"><a href="#提前安装软件" class="headerlink" title="提前安装软件"></a>提前安装软件</h4><p><code>pacman -S git vim zsh ntf-3g dialog wpa_supplicant networkmanager</code></p><p>安装 <em>git</em> , <em>vim</em> , <em>zsh</em> 和一些必须的包。</p><h4 id="本地化（设置Locale）"><a href="#本地化（设置Locale）" class="headerlink" title="本地化（设置Locale）"></a>本地化（设置Locale）</h4><p><code>vim /etc/locale.gen</code></p><p>找到 <em>zh_CN.UTF-8 UTF-8</em> <em>zh_HK.UTF-8 UTF-8</em> <em>zh_TW.UTF-8 UTF-8</em> 和<em>en_US.UTF-8 UTF-8</em> 这四行，去掉行首的#号，保存并退出。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> vim使用</span><br><span class="line">:数字 # 跳转到该行</span><br><span class="line">i # 光标之前插入</span><br><span class="line">I # 光标所在行的行首插入</span><br><span class="line">a # 光标之后插入</span><br><span class="line">A # 光标所在行的行尾插入</span><br><span class="line">Esc # 退出插入模式</span><br><span class="line">:wq # 保存退出</span><br></pre></td></tr></table></figure><p><code>locale-gen</code> 生成/etc/locale.gen文件</p><p><code>vim /etc/locale.conf</code> 添加 <em>LANG=en_US.UTF-8</em></p><hr><p>未完待续</p></div><div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong> Blackbox079</li><li class="post-copyright-link"><strong>本文链接：</strong> <a href="https://blackbox079.github.io/posts/a5e4683b/" title="ArchLinux安装教程">https://blackbox079.github.io/posts/a5e4683b/</a></li><li class="post-copyright-license"><strong>版权声明：</strong> 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div><footer class="post-footer"><div class="post-tags"><a href="/tags/教程/" rel="tag"># 教程</a> <a href="/tags/Linux/" rel="tag"># Linux</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"><a href="/posts/542b2155/" rel="prev" title="GitHub+Hexo搭建个人博客">GitHub+Hexo搭建个人博客<i class="fa fa-chevron-right"></i></a></div></div></footer></div></article></div></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">文章目录</li><li class="sidebar-nav-overview" data-target="site-overview-wrap">站点概览</li></ul><div class="site-overview-wrap sidebar-panel"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><p class="site-author-name" itemprop="name">Blackbox079</p><div class="site-description motion-element" itemprop="description"></div></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/archives/"><span class="site-state-item-count">4</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/"><span class="site-state-item-count">2</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/"><span class="site-state-item-count">4</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/./atom.xml" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/blackbox079" title="GitHub &rarr; https://github.com/blackbox079" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i> GitHub</a></span></div></div></div><div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据备份"><span class="nav-number">1.1.</span> <span class="nav-text">数据备份</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭快速启动"><span class="nav-number">1.2.</span> <span class="nav-text">关闭快速启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#磁盘准备"><span class="nav-number">1.3.</span> <span class="nav-text">磁盘准备</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#制作启动u盘"><span class="nav-number">2.</span> <span class="nav-text">制作启动u盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关闭安全启动"><span class="nav-number">3.</span> <span class="nav-text">关闭安全启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u盘启动"><span class="nav-number">4.</span> <span class="nav-text">u盘启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始安装"><span class="nav-number">5.</span> <span class="nav-text">开始安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#验证引导方式"><span class="nav-number">5.1.</span> <span class="nav-text">验证引导方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#联网"><span class="nav-number">5.2.</span> <span class="nav-text">联网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新系统时间"><span class="nav-number">5.3.</span> <span class="nav-text">更新系统时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分区-amp-格式化-amp-挂载"><span class="nav-number">5.4.</span> <span class="nav-text">分区&amp;格式化&amp;挂载</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分区"><span class="nav-number">5.4.1.</span> <span class="nav-text">分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#格式化"><span class="nav-number">5.4.2.</span> <span class="nav-text">格式化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#挂载分区"><span class="nav-number">5.4.3.</span> <span class="nav-text">挂载分区</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择镜像源"><span class="nav-number">5.5.</span> <span class="nav-text">选择镜像源</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装基本系统"><span class="nav-number">6.</span> <span class="nav-text">安装基本系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置系统"><span class="nav-number">7.</span> <span class="nav-text">配置系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fstab"><span class="nav-number">7.1.</span> <span class="nav-text">Fstab</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Chroot"><span class="nav-number">7.1.1.</span> <span class="nav-text">Chroot</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置时区"><span class="nav-number">7.1.2.</span> <span class="nav-text">设置时区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提前安装软件"><span class="nav-number">7.1.3.</span> <span class="nav-text">提前安装软件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地化（设置Locale）"><span class="nav-number">7.1.4.</span> <span class="nav-text">本地化（设置Locale）</span></a></li></ol></li></ol></li></ol></div></div></div></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2019</span><span class="with-love" id="animate"><i class="fa fa-heart"></i></span> <span class="author" itemprop="copyrightHolder">Blackbox079</span></div><div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.0</div><div class="busuanzi-count"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="post-meta-item-icon"><i class="fa fa-user"></i></span><span class="site-uv" title="总访客量"><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span> <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span><span class="site-pv" title="总访问量"><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span></div></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span id="scrollpercent"><span>0</span>%</span></div></div><script>"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script><script src="/lib/jquery/index.js?v=2.1.3"></script><script src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script src="/js/utils.js?v=7.1.0"></script><script src="/js/motion.js?v=7.1.0"></script><script src="/js/affix.js?v=7.1.0"></script><script src="/js/schemes/pisces.js?v=7.1.0"></script><script src="/js/scrollspy.js?v=7.1.0"></script><script src="/js/post-details.js?v=7.1.0"></script><script src="/js/next-boot.js?v=7.1.0"></script><script>// Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });</script></body></html>
