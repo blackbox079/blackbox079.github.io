@@ -1,22 +1,22 @@
 ---
-title: Hexo主题之NexT设置
+title: Hexo主题设置
 categories: CS
 tags:
   - 教程
   - Hexo
 abbrlink: 2d606960
 date: 2019-04-21 23:00:15
-updated:
 ---
 
-Hexo有很多的 [主题](https://hexo.io/themes/) ，其中， [NexT](https://github.com/theme-next/hexo-theme-next) 的完成度是比较高的。
-
-> [GitHub](https://github.com/theme-next/hexo-theme-next)
-> [官网](https://theme-next.org/)
+Hexo有很多的 [主题](https://hexo.io/themes/) ，这里对使用过的主题进行记录。
 
 <!--more-->
 
-## foot设置
+##  [NexT](https://github.com/theme-next/hexo-theme-next) 
+
+> [官网](https://theme-next.org/)
+
+### foot设置
 
 ```yml
 footer:
@@ -46,7 +46,7 @@ used.
     version: true
 ```
 
-## cc 协议
+### cc 协议
 
 ```yml
 creative_commons:
@@ -58,7 +58,7 @@ creative_commons:
 
 归档在配置里取消注释即可显示。
 
-## Follow me on GitHub
+### Follow me on GitHub
 
 ```yml
 github_banner:
@@ -67,9 +67,9 @@ github_banner:
   title: Follow me on GitHub
 ```
 
-## 菜单栏
+### 菜单栏
 
-### 创建分类页面
+#### 创建分类页面
 
 `hexo new pages categories` 会在/source里创建文件夹 categories ，打开该文件夹的 index.md 在---之间添加
 
@@ -78,7 +78,7 @@ type: "categories"
 comments: false
 ```
 
-### 创建标签页面
+#### 创建标签页面
 
 `hexo new pages tags` 打开/scource/tags里的index.md在---之间添加
 
@@ -87,7 +87,7 @@ type: "tags"
 comments: false
 ```
 
-### 修改主题配置文件
+#### 修改主题配置文件
 
 ```yml
 menu:
@@ -97,7 +97,7 @@ menu:
   archives: /archives/ || archive
 ```
 
-## 主题样式
+### 主题样式
 
 NexT提供了四种样式，喜欢哪个取消注释即可。
 
@@ -109,7 +109,7 @@ NexT提供了四种样式，喜欢哪个取消注释即可。
 scheme: Gemini
 ```
 
-## 社交链接
+### 社交链接
 
 ```yml
 social:
@@ -131,7 +131,7 @@ social_icons:
   transition: true
 ```
 
-## 回到顶部
+### 回到顶部
 
 ```yml
 back2top:
@@ -142,7 +142,7 @@ back2top:
   scrollpercent: true
 ```
 
-## 不蒜子统计
+### 不蒜子统计
 
 ```yml
 busuanzi_count:
@@ -155,7 +155,7 @@ busuanzi_count:
   post_views_icon: eye
 ```
 
-## 本地搜索
+### 本地搜索
 
 安装模块 `npm i --save hexo-generator-searchdb`
 
@@ -164,18 +164,18 @@ local_search:
   enable: true
 ```
 
-## 动画效果
+### 动画效果
 
-### pace进度条
+#### pace进度条
 
-#### 下载pace
+###### 下载pace
 
 ```shell
 cd theme/next
 git clone https://github.com/theme-next/theme-next-pace source/lib/pace
 ```
 
-#### 启用pace
+###### 启用pace
 
 在 **_config.yml** 中设置
 
@@ -184,16 +184,16 @@ pace: true
 pace_theme: pace-theme-minimal
 ```
 
-### canvas-next背景动画
+#### canvas-next背景动画
 
-#### 下载canvas-next
+###### 下载canvas-next
 
 ```shell
 cd theme/next
 git clone https://github.com/theme-next/theme-next-canvas-nest source/lib/canvas-nest
 ```
 
-#### 启用canvas-next
+###### 启用canvas-next
 
 在 **_config.yml** 中设置
 
@@ -207,4 +207,10 @@ canvas_nest:
   count: 99 # 行数
 ```
 
+## [Icarus](https://github.com/ppoffice/hexo-theme-icarus)
 
+> [demo](https://blog.zhangruipeng.me/hexo-theme-icarus/)
+
+### 安装
+
+`git clone https://github.com/ppoffice/hexo-theme-icarus.git themes/icarus` 然后在hexo的 *_config.yml* 中修改主题设置。

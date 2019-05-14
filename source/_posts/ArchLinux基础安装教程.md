@@ -1,12 +1,12 @@
 ---
-title: ArchLinux安装教程
+title: ArchLinux基础安装教程
 categories: CS
 tags:
   - 教程
   - Linux
-abbrlink: a5e4683b
+abbrlink: 1ee36574
 date: 2018-10-29 23:18:05
-updated:
+updates:
 ---
 
 在Windows10上安装Arch Linux组成双系统的教程(或者说是记录)。终于在虚拟机安装成功后就激情下单了u盘
@@ -65,7 +65,7 @@ updated:
 
 进入**BIOS** ， ![BIOSSetup.jpeg](https://i.loli.net/2018/11/02/5bdc03f16c590.jpeg) 按方向键移到 *Security* 选项卡，将 *Secure Boot* 修改为 *Disabled* 。 ![SecureBoot.jpeg](https://i.loli.net/2018/11/02/5bdc03f16d380.jpeg) 
 
-> 不同电脑进入BIOS的方式有所不同，我手上的联想本子是机身有一个凹进去的小孔，关机后用牙签或笔芯之类较细的物品戳一下即可打开“Novo Button Menu”菜单
+> 不同电脑进入BIOS的方式有所不同，我手上的联想本子是机身有个小孔，关机后用笔芯或牙签之类的戳一下即可打开“Novo Button Menu”菜单。
 
 方向键移动到 *Boot* 选项卡， *Boot Mode* 即为启动方式。 ![BootMode.jpeg](https://i.loli.net/2018/10/31/5bd9600022467.jpeg) 较新的电脑基本都是EFI启动，所以就是顺手看一下。
 
@@ -174,20 +174,20 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
 
 `arch-chroot /mnt` 执行这步之后，我们的操作都相当于在磁盘上的新装的系统中进行。
 
-#### 设置时区
+### 设置时区
 
 ```shell
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 hwclock --systohc #硬件时间，运行hwclock以生成/etc/adjtime
 ```
 
-#### 提前安装软件
+### 提前安装软件
 
 `pacman -S git vim zsh ntf-3g dialog wpa_supplicant networkmanager`
 
 安装 *git* , *vim* , *zsh* 和一些必须的包。
 
-#### 本地化（设置Locale）
+### 本地化（设置Locale）
 
 `vim /etc/locale.gen` 
 
@@ -208,5 +208,58 @@ Esc # 退出插入模式
 
 `vim /etc/locale.conf` 添加 *LANG=en_US.UTF-8* 
 
----
-未完待续
+### 设置主机名
+
+`echo Archlinux > /etc/hostname` 将Archlinux替换为你想设置的主机名，然后 `vim /etc/hosts` 添加
+
+```
+127.0.0.1	localhost
+::1        localhost
+127.0.1.1	Archlinux.localdomain	Archlinux #Archlinux替换为你的主机名
+```
+
+编辑完成后按 *Esc* 键然后输入`:wq` 即可保存并退出。
+
+### 设置root密码
+
+`passwd`
+
+### 安装 *Intel-ucode` （非Intel处理器可跳过）
+
+`pacman -S inter-ucode`
+
+### 安装引导程序（Bootloader）
+
+> [GRUB](https://wiki.archlinux.org/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
+> 
+> [GRUB/EFI examples](https://wiki.archlinux.org/index.php/GRUB/EFI_examples_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
+
+```shell
+pacman -S os-prober grub efibootmgr # os-prober辅助grub检测已经存在的系统，efibootmgr是使用EFI引导所需要装的
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub # 部署grub
+grub-mkconfig -o /boot/grub/grub.cfg # 生成配置文件
+```
+
+> 如果报warning failed to connect to lvmetad，falling back to device scanning.错误。参照 [这篇文章](https://www.pckr.co.uk/arch-grub-mkconfig-lvmetad-failures-inside-chroot-install/) ，简单的方法是编辑/etc/lvm/lvm.conf这个文件，找到use_lvmetad = 1将1修改为0，保存，重新配置grub。
+
+#### 检查引导
+
+`vim /boot/grub/grub.cfg` 检查接近文件末尾的 *menuentry* 是否有双系统。
+
+> 如果没有 *Arch Linux* 系统入口或该文件不存在，请先检查/boot是否正确不熟linux内核：
+`ls /boot` 查看是否有 *initramfs-linux-fallback.img initramfs-linux.img intel-ucode.img vmlinuz-linux*这几个文件，如果都没有，说明linux内核没有被正确部署，很有可能是/boot目录没有被正确挂载导致的，确认/boot目录无误后，可以重新部署linux内核： `pacman -S linux` ，再重新生成配置文件。
+>
+> 如果没有Windows入口，，可在安装完成后再尝试。
+
+## 最后
+
+```shell
+exit # 退出Chroot环境
+shutdown -h now # 关机
+```
+
+关机后拔出u盘，再戳开机，会自动以硬盘启动。Grub选择系统的界面一闪而过，就是 *Arch Linux* 的登录界面了。
+
+输入 `root` 然后输入密码，就可以登录系统啦。
+
+基础安装到此结束。图形界面等等会放到基础配置里。

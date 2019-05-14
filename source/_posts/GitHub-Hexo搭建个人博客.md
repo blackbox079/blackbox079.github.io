@@ -6,7 +6,7 @@ tags:
   - Hexo
 abbrlink: 542b2155
 date: 2019-04-20 22:06:19
-updated:
+updates:
 ---
 
 个人博客搭建和相关配置。采用 [Hexo](https://hexo.io/zh-cn/) 搭建，并部署到 [GitHub Pages](https://pages.github.com/) 。
