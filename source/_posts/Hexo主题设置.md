@@ -213,4 +213,8 @@ canvas_nest:
 
 ### 安装
 
-`git clone https://github.com/ppoffice/hexo-theme-icarus.git themes/icarus` 然后在hexo的 *_config.yml* 中修改主题设置。
+`git clone https://github.com/ppoffice/hexo-theme-icarus.git themes/icarus` 然后修改hexo的 *_config.yml* 主题配置 *theme:icarus* 。
+
+## [Cactus](https://github.com/probberechts/hexo-theme-cactus)
+
+`git clone https://github.com/probberechts/hexo-theme-cactus.git themes/cactus` 然后修改hexo的 *_config.yml* 主题配置 *theme: cactus*
