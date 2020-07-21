@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>卷尾松鼠</title>
+    <link>https://blog.whatworld.tk/</link>
+    <description>Recent content on 卷尾松鼠</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 20 Jul 2020 22:15:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.whatworld.tk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vue-i18n国际化</title>
+      <link>https://blog.whatworld.tk/post/5/</link>
+      <pubDate>Mon, 20 Jul 2020 22:15:25 +0800</pubDate>
+      
+      <guid>https://blog.whatworld.tk/post/5/</guid>
+      <description>Vue I18n 是 Vue.js 的国际化插件。本文搭配 iView 使用。 官网 Github 安装 1 npm i vue-i18n view-design --save 创建 在 src 目录下新建 locales 文件夹，并创建 en.json 和 zh.json 。支持三层路径，示例： 1 2 3 4 5 6 7 8 9</description>
+    </item>
+    
+    <item>
+      <title>一加3T刷机资源列表</title>
+      <link>https://blog.whatworld.tk/post/4/</link>
+      <pubDate>Sun, 12 Apr 2020 14:30:27 +0800</pubDate>
+      
+      <guid>https://blog.whatworld.tk/post/4/</guid>
+      <description>之前的刷机小总结，现在转用iOS也快一年了。惯例提醒：刷机有风险，操作需谨慎。 概述 解BL锁，更换rec。 底包，Rom包，内核，Gapps，R</description>
+    </item>
+    
+    <item>
+      <title>制作电子书不完全指南</title>
+      <link>https://blog.whatworld.tk/post/2/</link>
+      <pubDate>Wed, 24 Apr 2019 17:44:58 +0800</pubDate>
+      
+      <guid>https://blog.whatworld.tk/post/2/</guid>
+      <description>因为希望提高阅读体验而尝试自制epub文档，后续会继续完善。主要使用 VSCode 和 Sigil 。 准备工作 使用 VSCode 整理文档。 清除段前空格 : 搜索 替换为空 清除多余换行 :</description>
+    </item>
+    
+    <item>
+      <title>Arch Linux 基础安装</title>
+      <link>https://blog.whatworld.tk/post/1/</link>
+      <pubDate>Mon, 29 Oct 2018 23:18:05 +0800</pubDate>
+      
+      <guid>https://blog.whatworld.tk/post/1/</guid>
+      <description>在 Windows10 上安装 Arch Linux 组成双系统。参考教程： 官方 Wiki 以官方 Wiki 的方式安装 ArchLinux 概况：联想的本子，A卡，单硬盘。已装有win10，版本是1803，现计划安装 Arch</description>
+    </item>
+    
+  </channel>
+</rss>

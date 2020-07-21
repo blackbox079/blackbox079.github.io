@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://blog.whatworld.tk/sitemap.xml

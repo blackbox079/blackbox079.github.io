@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>阅读 on 卷尾松鼠</title>
+    <link>https://blog.whatworld.tk/tags/%E9%98%85%E8%AF%BB/</link>
+    <description>Recent content in 阅读 on 卷尾松鼠</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 24 Apr 2019 17:44:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.whatworld.tk/tags/%E9%98%85%E8%AF%BB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>制作电子书不完全指南</title>
+      <link>https://blog.whatworld.tk/post/2/</link>
+      <pubDate>Wed, 24 Apr 2019 17:44:58 +0800</pubDate>
+      
+      <guid>https://blog.whatworld.tk/post/2/</guid>
+      <description>因为希望提高阅读体验而尝试自制epub文档，后续会继续完善。主要使用 VSCode 和 Sigil 。 准备工作 使用 VSCode 整理文档。 清除段前空格 : 搜索 替换为空 清除多余换行 :</description>
+    </item>
+    
+  </channel>
+</rss>

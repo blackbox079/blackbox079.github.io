@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on 卷尾松鼠</title>
+    <link>https://blog.whatworld.tk/tags/linux/</link>
+    <description>Recent content in Linux on 卷尾松鼠</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 29 Oct 2018 23:18:05 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.whatworld.tk/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Arch Linux 基础安装</title>
+      <link>https://blog.whatworld.tk/post/1/</link>
+      <pubDate>Mon, 29 Oct 2018 23:18:05 +0800</pubDate>
+      
+      <guid>https://blog.whatworld.tk/post/1/</guid>
+      <description>在 Windows10 上安装 Arch Linux 组成双系统。参考教程： 官方 Wiki 以官方 Wiki 的方式安装 ArchLinux 概况：联想的本子，A卡，单硬盘。已装有win10，版本是1803，现计划安装 Arch</description>
+    </item>
+    
+  </channel>
+</rss>

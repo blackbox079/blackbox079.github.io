@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>制作电子书不完全指南 - 卷尾松鼠</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="卷尾松鼠" /><meta name="description" content="因为希望提高阅读体验而尝试自制epub文档，后续会继续完善。主要使用 VSCode 和 Sigil 。 准备工作 使用 VSCode 整理文档。 清除段前空格 : 搜索 替换为空 清除多余换行 :" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.73.0 with theme even" />
+
+
+<link rel="canonical" href="https://blog.whatworld.tk/post/2/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.78f8f17bab244b9ee62ad16480c9584d5fc2db06ae20681d1ca225cefd80767c.css" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+<meta property="og:title" content="制作电子书不完全指南" />
+<meta property="og:description" content="因为希望提高阅读体验而尝试自制epub文档，后续会继续完善。主要使用 VSCode 和 Sigil 。 准备工作 使用 VSCode 整理文档。 清除段前空格 : 搜索 替换为空 清除多余换行 :" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.whatworld.tk/post/2/" />
+<meta property="article:published_time" content="2019-04-24T17:44:58+08:00" />
+<meta property="article:modified_time" content="2019-04-24T17:44:58+08:00" />
+<meta itemprop="name" content="制作电子书不完全指南">
+<meta itemprop="description" content="因为希望提高阅读体验而尝试自制epub文档，后续会继续完善。主要使用 VSCode 和 Sigil 。 准备工作 使用 VSCode 整理文档。 清除段前空格 : 搜索 替换为空 清除多余换行 :">
+<meta itemprop="datePublished" content="2019-04-24T17:44:58&#43;08:00" />
+<meta itemprop="dateModified" content="2019-04-24T17:44:58&#43;08:00" />
+<meta itemprop="wordCount" content="2674">
+
+
+
+<meta itemprop="keywords" content="阅读," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="制作电子书不完全指南"/>
+<meta name="twitter:description" content="因为希望提高阅读体验而尝试自制epub文档，后续会继续完善。主要使用 VSCode 和 Sigil 。 准备工作 使用 VSCode 整理文档。 清除段前空格 : 搜索 替换为空 清除多余换行 :"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">卷尾松鼠</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">类别</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">卷尾松鼠</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">类别</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">制作电子书不完全指南</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-04-24 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD/"> 兴趣爱好 </a>
+            </div>
+          <span class="more-meta"> 约 2674 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#准备工作">准备工作</a>
+      <ul>
+        <li><a href="#添加标记">添加标记</a></li>
+        <li><a href="#处理内容提要">处理内容提要</a></li>
+      </ul>
+    </li>
+    <li><a href="#制作epub">制作epub</a>
+      <ul>
+        <li><a href="#统一新页面">统一新页面</a></li>
+        <li><a href="#添加封面和元数据">添加封面和元数据</a></li>
+        <li><a href="#完善title和添加样式">完善title和添加样式</a></li>
+        <li><a href="#处理作话">处理作话</a></li>
+        <li><a href="#添加脚注">添加脚注</a></li>
+        <li><a href="#处理目录">处理目录</a></li>
+        <li><a href="#收尾工作">收尾工作</a></li>
+      </ul>
+    </li>
+    <li><a href="#附录">附录</a>
+      <ul>
+        <li><a href="#样式参考">样式参考</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2019-04-24T17:44:58" title="April 24, 2019">April 24, 2019</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <p>因为希望提高阅读体验而尝试自制epub文档，后续会继续完善。主要使用 <a href="https://code.visualstudio.com/">VSCode</a> 和 <a href="https://sigil-ebook.com/">Sigil</a> 。</p>
+<h2 id="准备工作">准备工作</h2>
+<p>使用 <a href="https://code.visualstudio.com/">VSCode</a> 整理文档。</p>
+<ul>
+<li><strong>清除段前空格</strong> : 搜索 <code>　　</code> 替换为空</li>
+<li><strong>清除多余换行</strong> : 搜索 <code>\n\n</code> 替换为 <code>\n</code></li>
+<li><strong>校正错漏</strong> ：错别字，被和谐的字符 <code>*</code> 或 <code>□</code> ，混用的字符比如逗号句号冒号双引号。</li>
+<li><strong>标准化卷、章、节</strong>：统一文档内关键字，方便批量添加标记。</li>
+</ul>
+<h3 id="添加标记">添加标记</h3>
+<ul>
+<li><strong>添加 p 标签</strong> 搜索 <code>(.*)</code> 替换为 <code>&lt;p&gt;$1&lt;/p&gt;</code></li>
+<li><strong>处理卷</strong> 搜索 <code>&lt;p&gt;(第.*卷.*|卷.*)&lt;/p&gt;</code> 替换为 <code>&lt;hr class=&quot;sigil_split_marker&quot;/&gt;\n&lt;h1&gt;$1&lt;/h1&gt;</code></li>
+<li><strong>处理章</strong> 搜索 <code>&lt;p&gt;(第.*章.*|番外.*|序章)&lt;/p&gt;</code> 替换为 <code>&lt;hr class=&quot;sigil_split_marker&quot;/&gt;\n&lt;h2&gt;$1&lt;/h2&gt;</code></li>
+</ul>
+<p>其中， <code>&lt;hr class=&quot;sigil_split_marker&quot;/&gt;</code> 是 Sigil 的切分标记。</p>
+<h3 id="处理内容提要">处理内容提要</h3>
+<p>方法1：</p>
+<ul>
+<li>搜索 <code>&lt;h2&gt;(第.*章.*|番外.*) (.*)&lt;/h2&gt;</code> 替换为 <code>&lt;h2&gt;$1&lt;/h2&gt;\n&lt;div class=&quot;summary&quot;&gt;\n&lt;p&gt;$2&lt;/p&gt;\n&lt;/div&gt;</code></li>
+</ul>
+<p>方法2：</p>
+<ul>
+<li>搜索 <code>(第\d\d章.*)</code> 替换为 <code>$1\n====</code> ，然后将提要补充到等号中间，即 <em>==提要==</em></li>
+<li>搜索 <code>&lt;p&gt;==(.*)==&lt;/p&gt;</code> 替换为 <code>&lt;div class=&quot;summary&quot;&gt;&lt;p&gt;$1&lt;/p&gt;&lt;/div&gt;</code></li>
+</ul>
+<h2 id="制作epub">制作epub</h2>
+<blockquote>
+<p>Sigil是开源的电子书制作软件，软件安装包可在 <a href="https://github.com/Sigil-Ebook/Sigil/releases">Github Releases</a> 下载。<img src="https://i.loli.net/2020/04/14/qp249cLmAV5vJht.png" alt="Github Releases"></p>
+</blockquote>
+<p>打开 <em>Sigil</em> ，默认页面的一本全新的电子书，将在 <em>VSCode</em> 处理好的文档复制粘贴到 <em>Text\Section0001.xhtml</em> 的 <code>&lt;body&gt;&lt;/body&gt;</code> 标签里。使用快捷键 <em>F6</em> 在标记处切分，即可把每一章划分成一个xhtml文件。检查一下是否有章节划分错误，然后对这部分文件重命名。</p>
+<ul>
+<li><em>Cover</em> 封面</li>
+<li><em>Introdution</em> 扉页，简介，详情</li>
+<li><em>Nav</em> 目录</li>
+<li><em>Volume</em> 卷</li>
+<li><em>Chapter</em> 章</li>
+<li><em>Gaiden</em> 番外</li>
+<li><em>Version</em> 版本及更新信息</li>
+</ul>
+<p>通常切分完成之后 <em>Section0001.xhtml</em> 内容是空的，可以直接重命名为 Introduction，放入书籍相关介绍。<em>Cover.xhtml</em> 会在添加封面之后自动生成。<em>Version.xhtml</em> 可在Text目录下右键选择 <em>添加空白HTML文件</em> ，后续补充版本更新日志。</p>
+<h3 id="统一新页面">统一新页面</h3>
+<ol>
+<li>将 <em>Version.xhtml</em> <code>&lt;body&gt;&lt;/body&gt;</code> 里的内容改成 <code>&lt;h1&gt;版本记录&lt;/h1&gt;&lt;div id=&quot;version&quot;&gt;&lt;/div&gt;</code></li>
+<li>更换 <em>Introdution.xhtml</em> 的内容为</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xhtml" data-lang="xhtml"><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>扉页<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;info&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>书名：<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>作者：<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>类型：<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>标签：<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>主角：<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>简介：<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>发表：<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>更新：<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>字数：<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>链接：<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;.&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;.&#34;</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">span</span><span class="p">&gt;</span>文案：<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>其中，以 <em>.</em> 表示的是书籍自身的信息。如果链接中带有 <code>&amp;</code> ，可将其替换为 <code>&amp;amp;</code> 。</p>
+<h3 id="添加封面和元数据">添加封面和元数据</h3>
+<p>如果有封面的话，可通过 <em>工具-添加封面</em> 进行添加。快捷键 <em>F8</em> 编辑元数据，通常包括：</p>
+<ul>
+<li><em>dc:title</em> 书名</li>
+<li><em>dc:creator</em> 作者</li>
+<li><em>belongs-to-collection</em> 作品集</li>
+<li><em>dcterms:created</em> 发表时间</li>
+<li><em>dc:language</em> 语言，通常是 <code>zh-CN</code></li>
+<li><em>dc:source</em> 来源</li>
+<li><em>dc:description</em> 描述</li>
+<li><em>meta</em> 自动生成创建时间</li>
+</ul>
+<h3 id="完善title和添加样式">完善title和添加样式</h3>
+<p>可以删除 <em>Styles</em> 目录下的 <em>sgc-nav.css</em> 文件，然后右键添加现有文件，选择常用的css文件。（css文件重复使用）
+搜索 <code>(?s)&lt;title&gt;&lt;/title&gt;(.*)&lt;h2&gt;(.*)&lt;/h2&gt;</code> 替换为 <code>&lt;title&gt;\2&lt;/title&gt;\n&lt;link href=&quot;../Styles/main.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;\1&lt;h2&gt;\2&lt;/h2&gt;</code></p>
+<h3 id="处理作话">处理作话</h3>
+<p>方法1：
+搜索 <code>(?s)&lt;p&gt;作者有话要说：&lt;/p&gt;(.*)&lt;/body&gt;</code> 替换为 <code>&lt;div class=&quot;authorSayBox&quot;&gt;\1&lt;/div&gt;\n&lt;/body&gt;</code></p>
+<p>方法2：
+搜索 <code>(?s)&lt;p&gt;===&lt;/p&gt;\n(&lt;p&gt;.*&lt;/p&gt;)\n&lt;p&gt;===&lt;/p&gt;</code> 替换为 <code>&lt;div class=&quot;authorSayBox&quot;&gt;\n\1\n&lt;/div&gt;</code></p>
+<h3 id="添加脚注">添加脚注</h3>
+<p>首先明确需要添加脚注的位置，原文档中注解出现的位置可能各有不同。epub3 原生脚注参考：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xhtml" data-lang="xhtml"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">epub:type</span><span class="o">=</span><span class="s">&#34;noteref&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#footnote_1&#34;</span><span class="p">&gt;</span>需要添加脚注的内容1<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+...
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">epub:type</span><span class="o">=</span><span class="s">&#34;noteref&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#footnote_2&#34;</span><span class="p">&gt;</span>需要添加脚注的内容2<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="c">&lt;!--可在xhtml的&lt;/body&gt;前统一添加脚注内容--&gt;</span>
+<span class="p">&lt;</span><span class="nt">section</span> <span class="na">epub:type</span><span class="o">=</span><span class="s">&#34;footnotes&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">aside</span> <span class="na">epub:type</span><span class="o">=</span><span class="s">&#34;footnote&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;footnote_1&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>脚注内容1<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">aside</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">aside</span> <span class="na">epub:type</span><span class="o">=</span><span class="s">&#34;footnote&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;footnote_2&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>脚注内容2<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">aside</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="处理目录">处理目录</h3>
+<ol>
+<li>工具-目录-生成目录，或快捷键 <em>Ctrl+T</em> 。</li>
+<li>可删除 <em>Nav.xhtml</em> 文件中的 <code>&lt;link href=&quot;../Styles/sgc-nav.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/&gt;</code> 和</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xhtml" data-lang="xhtml">  <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">epub:type</span><span class="o">=</span><span class="s">&#34;landmarks&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;landmarks&#34;</span> <span class="na">hidden</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>里程碑<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">epub:type</span><span class="o">=</span><span class="s">&#34;toc&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#toc&#34;</span><span class="p">&gt;</span>目录<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>如需添加卷目录，可从<em>Nav.xhtml</em> 中复制该卷的<code>&lt;ol&gt;&lt;/ol&gt;</code>列表粘贴过来。也可加上 <code>&lt;div class=&quot;return&quot;&gt;&lt;a href=&quot;nav.xhtml&quot;&gt;返回目录&lt;/a&gt;&lt;/div&gt;</code> 。</li>
+</ol>
+<h3 id="收尾工作">收尾工作</h3>
+<h4 id="完善版本记录">完善版本记录</h4>
+<p>在 <em>Version.xhtml</em> 中补充版本记录： <code>&lt;div id=&quot;version&quot;&gt;&lt;p&gt;&lt;span&gt;yyyy-MM-dd&lt;/span&gt; 更新概括&lt;/p&gt;&lt;/div&gt;</code> 。如果修正错别字则补上 <code>&lt;li&gt;章节：原文 -&gt; 修正后&lt;/li&gt;</code></p>
+<h4 id="格式化html">格式化HTML</h4>
+<p>工具-重新格式化HTML-修改和预处理所有HTML文件</p>
+<h4 id="更新opf清单">更新opf清单</h4>
+<p>工具-Epub3工具-更新清单属性</p>
+<h4 id="检查和测试">检查和测试</h4>
+<ul>
+<li>检查是否有错漏</li>
+<li>测试兼容效果</li>
+</ul>
+<h2 id="附录">附录</h2>
+<h3 id="样式参考">样式参考</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">div</span> <span class="p">{</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">p</span> <span class="p">{</span>
+  <span class="k">text-indent</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
+  <span class="n">duokan-text-indent</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">a</span> <span class="p">{</span>
+  <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#ef475d</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">nav</span> <span class="nt">ol</span> <span class="nt">li</span> <span class="nt">a</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#41555d</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="p">:</span> <span class="mf">1.2</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="p">:</span> <span class="mf">1.5</span><span class="kt">em</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">nav</span> <span class="nt">ol</span> <span class="nt">ol</span> <span class="nt">li</span> <span class="nt">a</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#758a99</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="o">,</span> <span class="nt">li</span><span class="o">,</span> <span class="nt">ol</span> <span class="p">{</span>
+  <span class="k">list-style</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">img</span> <span class="p">{</span>
+<span class="k">max-width</span><span class="p">:</span> <span class="mi">720</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 标题一 篇*/</span>
+
+<span class="nt">h1</span> <span class="p">{</span>
+  <span class="k">font-family</span><span class="p">:</span> <span class="s2">&#34;苹方&#34;</span><span class="p">,</span> <span class="s2">&#34;DK-HEITI&#34;</span><span class="p">,</span> <span class="s2">&#34;黑体&#34;</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="p">:</span> <span class="mf">1.6</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">margin-left</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">text-indent</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="p">:</span> <span class="mf">1.8</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">2</span><span class="kt">px</span> <span class="mi">2</span><span class="kt">px</span> <span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">background</span><span class="p">:</span> <span class="mh">#008080</span><span class="p">;</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c">/* 标题二 章*/</span>
+
+<span class="nt">h2</span> <span class="p">{</span>
+  <span class="k">font-family</span><span class="p">:</span> <span class="s2">&#34;苹方&#34;</span><span class="p">,</span> <span class="s2">&#34;DK-HEITI&#34;</span><span class="p">,</span> <span class="s2">&#34;黑体&#34;</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="p">:</span> <span class="mf">1.5</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">margin-top</span><span class="p">:</span> <span class="mf">1.5</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#4682B4</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="p">:</span> <span class="mf">1.3</span><span class="kt">em</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c">/* 标题三 节*/</span>
+
+<span class="nt">h3</span> <span class="p">{</span>
+  <span class="k">margin</span><span class="p">:</span> <span class="mf">2.5</span><span class="kt">em</span> <span class="mi">0</span> <span class="mf">1.3</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#800000</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="p">:</span> <span class="mi">120</span><span class="kt">%</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="p">:</span> <span class="mf">1.3</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">border-style</span><span class="p">:</span> <span class="kc">none</span> <span class="kc">none</span> <span class="kc">none</span> <span class="kc">solid</span><span class="p">;</span>
+  <span class="k">border-width</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span> <span class="mi">0</span><span class="kt">px</span> <span class="mi">0</span><span class="kt">px</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">border-color</span><span class="p">:</span> <span class="mh">#B22222</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">2</span><span class="kt">px</span> <span class="mi">2</span><span class="kt">px</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">.</span><span class="nc">summary</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#9d2933</span><span class="p">;</span>
+  <span class="k">margin</span><span class="p">:</span> <span class="mi">1</span><span class="kt">em</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mf">.45</span><span class="kt">em</span> <span class="mf">.45</span><span class="kt">em</span> <span class="mf">.45</span><span class="kt">em</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">border-left</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#db5a6b</span><span class="p">;</span>
+  <span class="k">background</span><span class="p">:</span> <span class="mh">#fdecee</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">.</span><span class="nc">summary</span> <span class="nt">p</span><span class="o">+</span><span class="nt">p</span> <span class="p">{</span>
+  <span class="k">margin-top</span><span class="p">:</span> <span class="mf">.35</span><span class="kt">em</span><span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">.</span><span class="nc">summary</span> <span class="nt">p</span> <span class="p">{</span>
+  <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="p">:</span> <span class="mf">.9</span><span class="kt">em</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">authorSayBox</span> <span class="p">{</span>
+  <span class="k">border</span><span class="p">:</span> <span class="kc">solid</span> <span class="mi">1</span><span class="kt">px</span> <span class="mh">#ffb3a7</span><span class="p">;</span>
+  <span class="k">border-radius</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#7b4741</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mf">.5</span><span class="kt">rem</span><span class="p">;</span>
+  <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 详情页 */</span>
+
+<span class="p">.</span><span class="nc">circle</span> <span class="p">{</span>
+  <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+  <span class="k">height</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+  <span class="k">background</span><span class="p">:</span> <span class="mh">#4682B4</span><span class="p">;</span>
+  <span class="k">border-radius</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">.</span><span class="nc">info</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mf">.5</span><span class="kt">em</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">.</span><span class="nc">info</span> <span class="nt">span</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#b36d61</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">.</span><span class="nc">info</span> <span class="nt">p</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#a98175</span><span class="p">;</span>
+  <span class="k">text-indent</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c">/* 卷 */</span>
+
+<span class="nt">div</span><span class="p">.</span><span class="nc">volume</span> <span class="p">{</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#fffbf0</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">return</span> <span class="p">{</span>
+  <span class="k">clear</span><span class="p">:</span> <span class="kc">both</span><span class="p">;</span>
+  <span class="k">height</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+  <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+  <span class="k">border-bottom</span><span class="p">:</span> <span class="kc">solid</span> <span class="mh">#008080</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">return</span> <span class="nt">a</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#41555d</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 版本记录 */</span>
+
+<span class="p">#</span><span class="nn">version</span> <span class="nt">span</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#ffb61e</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">卷尾松鼠</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-04-24
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E9%98%85%E8%AF%BB/">阅读</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/4/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">一加3T刷机资源列表</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/1/">
+            <span class="next-text nav-default">Arch Linux 基础安装</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/blackbox079/" class="iconfont icon-github" title="github"></a>
+  <a href="https://blog.whatworld.tk/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2019 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">卷尾松鼠</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+    <script type="text/javascript" src="/lib/timeago/timeago-3.0.2.min.js"></script>
+    <script type="text/javascript" src="/lib/timeago/timeago.locales-3.0.2.min.js"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "zh-cn".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

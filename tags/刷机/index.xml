@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>刷机 on 卷尾松鼠</title>
+    <link>https://blog.whatworld.tk/tags/%E5%88%B7%E6%9C%BA/</link>
+    <description>Recent content in 刷机 on 卷尾松鼠</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 12 Apr 2020 14:30:27 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.whatworld.tk/tags/%E5%88%B7%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>一加3T刷机资源列表</title>
+      <link>https://blog.whatworld.tk/post/4/</link>
+      <pubDate>Sun, 12 Apr 2020 14:30:27 +0800</pubDate>
+      
+      <guid>https://blog.whatworld.tk/post/4/</guid>
+      <description>之前的刷机小总结，现在转用iOS也快一年了。惯例提醒：刷机有风险，操作需谨慎。 概述 解BL锁，更换rec。 底包，Rom包，内核，Gapps，R</description>
+    </item>
+    
+  </channel>
+</rss>

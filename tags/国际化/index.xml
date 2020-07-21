@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>国际化 on 卷尾松鼠</title>
+    <link>https://blog.whatworld.tk/tags/%E5%9B%BD%E9%99%85%E5%8C%96/</link>
+    <description>Recent content in 国际化 on 卷尾松鼠</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 20 Jul 2020 22:15:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.whatworld.tk/tags/%E5%9B%BD%E9%99%85%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vue-i18n国际化</title>
+      <link>https://blog.whatworld.tk/post/5/</link>
+      <pubDate>Mon, 20 Jul 2020 22:15:25 +0800</pubDate>
+      
+      <guid>https://blog.whatworld.tk/post/5/</guid>
+      <description>Vue I18n 是 Vue.js 的国际化插件。本文搭配 iView 使用。 官网 Github 安装 1 npm i vue-i18n view-design --save 创建 在 src 目录下新建 locales 文件夹，并创建 en.json 和 zh.json 。支持三层路径，示例： 1 2 3 4 5 6 7 8 9</description>
+    </item>
+    
+  </channel>
+</rss>
