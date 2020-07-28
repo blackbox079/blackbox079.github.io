@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>制作电子书不完全指南</title>
+      <title>电子书制作不完全指南</title>
       <link>https://blog.whatworld.tk/post/2/</link>
       <pubDate>Wed, 24 Apr 2019 17:44:58 +0800</pubDate>
       
       <guid>https://blog.whatworld.tk/post/2/</guid>
-      <description>因为希望提高阅读体验而尝试自制epub文档，后续会继续完善。主要使用 VSCode 和 Sigil 。 准备工作 使用 VSCode 整理文档。 清除段前空格 : 搜索 替换为空 清除多余换行 :</description>
+      <description>&lt;p&gt;因为希望提高阅读体验而尝试自制epub文档，后续会继续完善。主要使用 &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VSCode&lt;/a&gt; 和 &lt;a href=&#34;https://sigil-ebook.com/&#34;&gt;Sigil&lt;/a&gt; 。&lt;/p&gt;</description>
     </item>
     
   </channel>

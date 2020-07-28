@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on 卷尾松鼠</title>
+    <link>https://blog.whatworld.tk/tags/blog/</link>
+    <description>Recent content in Blog on 卷尾松鼠</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 23 Jul 2020 10:44:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.whatworld.tk/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo博客框架搭建及使用教程</title>
+      <link>https://blog.whatworld.tk/post/6/</link>
+      <pubDate>Thu, 23 Jul 2020 10:44:18 +0800</pubDate>
+      
+      <guid>https://blog.whatworld.tk/post/6/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/gohugoio/hugo&#34;&gt;Hugo&lt;/a&gt; 是基于 Go 开发的博客框架，文章编译速度快，社区活跃。目前中文相关较少，主题不太多。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

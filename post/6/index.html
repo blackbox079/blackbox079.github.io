@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Hugo博客框架搭建及使用教程 - 卷尾松鼠</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="卷尾松鼠" /><meta name="description" content="Hugo 是基于 Go 开发的博客框架，文章编译速度快，社区活跃。目前中文相关较少，主题不太多。
+" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.74.3 with theme even" />
+
+
+<link rel="canonical" href="https://blog.whatworld.tk/post/6/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.78f8f17bab244b9ee62ad16480c9584d5fc2db06ae20681d1ca225cefd80767c.css" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+<meta property="og:title" content="Hugo博客框架搭建及使用教程" />
+<meta property="og:description" content="Hugo 是基于 Go 开发的博客框架，文章编译速度快，社区活跃。目前中文相关较少，主题不太多。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.whatworld.tk/post/6/" />
+<meta property="article:published_time" content="2020-07-23T10:44:18+08:00" />
+<meta property="article:modified_time" content="2020-07-28T17:42:04+08:00" />
+<meta itemprop="name" content="Hugo博客框架搭建及使用教程">
+<meta itemprop="description" content="Hugo 是基于 Go 开发的博客框架，文章编译速度快，社区活跃。目前中文相关较少，主题不太多。">
+<meta itemprop="datePublished" content="2020-07-23T10:44:18+08:00" />
+<meta itemprop="dateModified" content="2020-07-28T17:42:04+08:00" />
+<meta itemprop="wordCount" content="1252">
+
+
+
+<meta itemprop="keywords" content="Blog,Hugo," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hugo博客框架搭建及使用教程"/>
+<meta name="twitter:description" content="Hugo 是基于 Go 开发的博客框架，文章编译速度快，社区活跃。目前中文相关较少，主题不太多。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">卷尾松鼠</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">类别</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">卷尾松鼠</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">类别</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Hugo博客框架搭建及使用教程</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-07-23 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD/"> 兴趣爱好 </a>
+            </div>
+          <span class="more-meta"> 约 1252 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装">安装</a>
+      <ul>
+        <li><a href="#macoslinux">macOS/Linux</a></li>
+        <li><a href="#windows">Windows</a></li>
+        <li><a href="#创建站点">创建站点</a></li>
+        <li><a href="#主题">主题</a></li>
+      </ul>
+    </li>
+    <li><a href="#配置httpsgohugoiogetting-startedconfiguration"><a href="https://gohugo.io/getting-started/configuration/">配置</a></a></li>
+    <li><a href="#使用">使用</a>
+      <ul>
+        <li><a href="#默认模板">默认模板</a></li>
+        <li><a href="#常用命令">常用命令</a></li>
+        <li><a href="#图床">图床</a></li>
+      </ul>
+    </li>
+    <li><a href="#上线">上线</a>
+      <ul>
+        <li><a href="#github">GitHub</a></li>
+        <li><a href="#域名">域名</a></li>
+        <li><a href="#cdn">CDN</a></li>
+        <li><a href="#cname">CNAME</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p><a href="https://github.com/gohugoio/hugo">Hugo</a> 是基于 Go 开发的博客框架，文章编译速度快，社区活跃。目前中文相关较少，主题不太多。</p>
+<h2 id="安装">安装</h2>
+<h3 id="macoslinux">macOS/Linux</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">brew install hugo
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="windows">Windows</h3>
+<p><code>hugo</code> 常规版本， <code>hugo-extended</code> Sass/SCSS 扩展版本。这里安装的是 hugo-extended 。</p>
+<h4 id="方式一chocolateyhttpschocolateyorg">方式一：<a href="https://chocolatey.org/">Chocolatey</a></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 安装</span>
+choco install hugo-extended -confirm
+<span class="c1"># 更新</span>
+choco upgrade hugo-extended
+<span class="c1"># 卸载</span>
+choco uninstall hugo-extended
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="方式二scoophttpsscoopsh">方式二：<a href="https://scoop.sh/">Scoop</a></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">scoop install hugo-extended <span class="c1"># 安装</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="创建站点">创建站点</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">hugo new site blog
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="主题">主题</h3>
+<p><a href="https://themes.gohugo.io/">主题仓库</a> 目前的主题数量确实是比较少的，这里列一下个人比较钟意的。</p>
+<ul>
+<li><a href="https://themes.gohugo.io/hugo-theme-even/">even</a></li>
+<li><a href="https://themes.gohugo.io/mainroad/">mainroad</a></li>
+<li><a href="https://themes.gohugo.io/hugo-notepadium/">hugo-notepadium</a></li>
+<li><a href="https://themes.gohugo.io/hugo-paper/">paper</a></li>
+<li><a href="https://themes.gohugo.io/hugo-theme-zozo/">zozo</a></li>
+</ul>
+<p>本文中以 <code>even</code> 作为示例。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">git clone https://github.com/olOwOlo/hugo-theme-even.git themes/even
+git submodule add https://github.com/olOwOlo/hugo-theme-even.git themes/even
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="更新主题">更新主题</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> ./themes/even/
+git pull
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="配置httpsgohugoiogetting-startedconfiguration"><a href="https://gohugo.io/getting-started/configuration/">配置</a></h2>
+<p>配置文件是根目录下的 config.toml ，一部分是通用的，具体可根据主题的文档来进行配置。这里列出部分通用配置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="nx">baseURL</span> <span class="p">=</span> <span class="s2">&#34;https://blog.whatworld.tk&#34;</span> <span class="c"># 域名</span>
+<span class="nx">languageCode</span> <span class="p">=</span> <span class="s2">&#34;zh-cn&#34;</span> <span class="c"># 网站语言</span>
+<span class="nx">defaultContentLanguage</span> <span class="p">=</span> <span class="s2">&#34;zh-cn&#34;</span> <span class="c"># 内容默认语言</span>
+<span class="nx">enableRobotsTXT</span> <span class="p">=</span> <span class="kc">true</span> <span class="c"># 生成robots.txt</span>
+<span class="nx">enableEmoji</span> <span class="p">=</span> <span class="kc">true</span> <span class="c"># 启用表情符号支持</span>
+<span class="nx">theme</span> <span class="p">=</span> <span class="s2">&#34;even&#34;</span> <span class="c"># 主题</span>
+<span class="nx">hasCJKLanguage</span> <span class="p">=</span> <span class="kc">true</span> <span class="c"># 自动检测中日韩语</span>
+<span class="nx">paginate</span> <span class="p">=</span> <span class="mi">10</span> <span class="c"># 每页</span>
+<span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;卷尾松鼠&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="使用">使用</h2>
+<h3 id="默认模板">默认模板</h3>
+<p>修改 archetypes 下的 default.md</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">---
+title: &#34;{{ replace .Name &#34;-&#34; &#34; &#34; | title }}&#34;
+date: {{ .Date }}
+categories: [&#34;&#34;]
+tags: [&#34;&#34;]
+draft: true
+---
+
+<span class="c">&lt;!--more--&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>其中 <code>&lt;!--more--&gt;</code> 是手动拆分摘要的分隔符。默认情况下，Hugo 会自动将内容的前 70 个词作为摘要，也可以在配置文件 config.toml 中设置 <code>summaryLength</code> 来定制摘要长度。不过显然，使用 <code>&lt;!--more--&gt;</code> 会更为灵活，摘要在它之前，正文在它之后。</p>
+<h3 id="常用命令">常用命令</h3>
+<p>使用 <code>even</code> 主题，内容应该在 <code>post</code> 文件夹而不是 <code>posts</code> 。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">hugo new post/1.md <span class="c1"># 新建文件名为1的md文件，命名规则随个人喜好就行</span>
+hugo server -D <span class="c1"># 启动本地服务器，-D表示显示草稿</span>
+hugo <span class="c1"># 编译到public</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="图床">图床</h3>
+<p>使用 <a href="https://github.com/Molunerfinn/PicGo">PicGo</a> 上传和管理， <a href="https://imgur.com/">imgur</a> 作为博客主图床。</p>
+<p>首先注册 imgur，然后 <a href="https://api.imgur.com/oauth2/addclient">获取 Client ID</a> 。Authorization type 中选择第二项 <code>OAuth 2 authorization without a callback URL</code> ，其余随意填写，通过人机验证提交后可获得 id 和密钥，将 id 复制并填入 PicGo 的 Imgur 图床设置中。因为已经被墙，所以还需设置代理，否则无法上传。本地代理通常是 <code>http://127.0.0.1:端口号</code> ，具体使用的端口可查看相关软件设置，通常是 <code>1080</code> 或 <code>7890</code> 。</p>
+<p>不过目前 PicGo 还没能设置 cdn，可以手动给图片加上 <code>i.staticdn.net/</code> 。示例：原图地址 <code>https://i.imgur.com/3QrPToe.jpg</code> ，修改后地址 <code>https://i.staticdn.net/i.imgur.com/3QrPToe.jpg</code> 。</p>
+<h2 id="上线">上线</h2>
+<h3 id="github">GitHub</h3>
+<p>首先需要有 GitHub 账号，<a href="https://github.com/join">注册</a>GitHub，然后<a href="https://github.com/new">新建仓库</a>，仓库名称为 <code>用户名.github.io</code>， <img src="https://i.staticdn.net/i.imgur.com/8lMdOoM.png" alt="新建仓库"> 复制仓库地址<img src="https://i.staticdn.net/i.imgur.com/TYIrKHx.png" alt="复制仓库地址">后回到终端</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">hugo <span class="c1"># 生成可发布文件，默认在public文件夹</span>
+<span class="nb">cd</span> public
+git init <span class="c1"># 初始化git本地仓库</span>
+git remote add origin 你的GitHub仓库地址 <span class="c1"># 添加远程仓库地址</span>
+git add -A <span class="c1"># 暂存文件</span>
+git commit -m <span class="s2">&#34;初始提交&#34;</span> <span class="c1"># 填写备注信息并提交</span>
+git push origin master <span class="c1"># 推送到远程服务器</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="域名">域名</h3>
+<p>可以在 <a href="https://www.freenom.com/zh/index.html?lang=zh">Freenom</a> 薅一个，开全局代理并确定 ip 所在的国家<img src="https://i.staticdn.net/i.imgur.com/9pv326Z.png" alt="搜索域名"> 搜索并选择你钟意的域名，点击完成 <img src="https://i.staticdn.net/i.imgur.com/f9useYA.png" alt="选择域名"> 选择12个月免费并继续 <img src="https://i.staticdn.net/i.imgur.com/0VPvZFW.png" alt="选择时长"> 输入邮箱并点击验证 <img src="https://i.staticdn.net/i.imgur.com/aadu2PS.png" alt="验证"> 回邮箱点击验证链接，注册信息不一定真实，但地址要与ip对应。然后点击View Cart查看购物车，Complete Order完成订单。</p>
+<p>失败示例 <img src="https://i.staticdn.net/i.imgur.com/5lQ2PES.png" alt="失败示例"></p>
+<p>成功示例 <img src="https://i.staticdn.net/i.imgur.com/lKUJ0R6.png" alt="成功示例"></p>
+<p>成功后，点击导航栏 Services-My Domains 即可查看管理该域名。<img src="https:/i.staticdn.net//i.imgur.com/G4kGTjj.png" alt="管理域名"></p>
+<p>点击 Manage Domain 进行域名管理，dns和名称服务器都由 <code>Cloudflare</code> 处理。我们进行下一步。
+<img src="https://i.staticdn.net/i.imgur.com/iUGuGJ0.png" alt="域名管理"></p>
+<h3 id="cdn">CDN</h3>
+<p>注册 <a href="https://www.cloudflare.com/zh-cn/">Cloudflare</a> ，添加站点 <img src="https://i.staticdn.net/i.imgur.com/p1YCGcV.png" alt="添加站点"> 然后添加 DNS 记录 <img src="https://i.staticdn.net/i.imgur.com/0ZY8uCD.png" alt="GitHub Pages"></p>
+<p>回到 Freenom ，使用自定义名称服务器，并填入 Cloudflare 提供的服务器地址。<img src="https://i.staticdn.net/i.imgur.com/PZJKjJI.png" alt="名称服务器"></p>
+<h3 id="cname">CNAME</h3>
+<p>在 public 文件夹里增加 <code>CNAME</code> 文件，填入不带协议的域名，示例 <code>blog.whatworld.tk</code> 。将文件提交到 GitHub 仓库，过一会即可生效。</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">卷尾松鼠</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-07-28
+        <a href="#ZgotmplZ/commit/f5632e86ac1c964ea986009dcdb295d97eb87916" title="增加文章8，扩充6">(f5632e8)</a>
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/blog/">Blog</a>
+          <a href="/tags/hugo/">Hugo</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/8/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">小鹤双拼 for Windows</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/5/">
+            <span class="next-text nav-default">Vue-i18n国际化</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/blackbox079/" class="iconfont icon-github" title="github"></a>
+  <a href="https://blog.whatworld.tk/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2019 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">卷尾松鼠</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+    <script type="text/javascript" src="/lib/timeago/timeago-3.0.2.min.js"></script>
+    <script type="text/javascript" src="/lib/timeago/timeago.locales-3.0.2.min.js"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "zh-cn".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

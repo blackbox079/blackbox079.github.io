@@ -17,7 +17,11 @@
       <pubDate>Mon, 20 Jul 2020 22:15:25 +0800</pubDate>
       
       <guid>https://blog.whatworld.tk/post/5/</guid>
-      <description>Vue I18n 是 Vue.js 的国际化插件。本文搭配 iView 使用。 官网 Github 安装 1 npm i vue-i18n view-design --save 创建 在 src 目录下新建 locales 文件夹，并创建 en.json 和 zh.json 。支持三层路径，示例： 1 2 3 4 5 6 7 8 9</description>
+      <description>&lt;p&gt;Vue I18n 是 Vue.js 的国际化插件。本文搭配 &lt;a href=&#34;https://www.iviewui.com/docs/guide/i18n&#34;&gt;iView&lt;/a&gt; 使用。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://kazupon.github.io/vue-i18n/zh/&#34;&gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/kazupon/vue-i18n&#34;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>
