@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>小鹤双拼 on 卷尾松鼠</title>
+    <link>https://blog.whatworld.tk/tags/%E5%B0%8F%E9%B9%A4%E5%8F%8C%E6%8B%BC/</link>
+    <description>Recent content in 小鹤双拼 on 卷尾松鼠</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 28 Jul 2020 11:08:10 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.whatworld.tk/tags/%E5%B0%8F%E9%B9%A4%E5%8F%8C%E6%8B%BC/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>小鹤双拼 for Windows</title>
+      <link>https://blog.whatworld.tk/post/8/</link>
+      <pubDate>Tue, 28 Jul 2020 11:08:10 +0800</pubDate>
+      
+      <guid>https://blog.whatworld.tk/post/8/</guid>
+      <description>&lt;p&gt;双拼是建立在拼音输入法的基础上对全拼的一种改进，只需输入一个代表声母的字母和一个代表韵母的字母，就可以打出任意一个中文单字。双拼也远不止小鹤一种，你可以随意选择你喜欢的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://flypy.com/&#34;&gt;小鹤双拼官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://flypy.ys168.com/&#34;&gt;小鹤双拼网盘&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;双形则是在双拼的基础上，对字进行拆解，极大减少重码率，尽量达到四码即可上屏，快速定位到你所想的汉字。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

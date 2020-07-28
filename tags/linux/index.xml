@@ -17,7 +17,11 @@
       <pubDate>Mon, 29 Oct 2018 23:18:05 +0800</pubDate>
       
       <guid>https://blog.whatworld.tk/post/1/</guid>
-      <description>在 Windows10 上安装 Arch Linux 组成双系统。参考教程： 官方 Wiki 以官方 Wiki 的方式安装 ArchLinux 概况：联想的本子，A卡，单硬盘。已装有win10，版本是1803，现计划安装 Arch</description>
+      <description>&lt;p&gt;在 Windows10 上安装 Arch Linux 组成双系统。参考教程：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://wiki.archlinux.org/index.php/Main_page&#34;&gt;官方 Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.viseator.com/2017/05/17/arch_install/&#34;&gt;以官方 Wiki 的方式安装 ArchLinux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>
