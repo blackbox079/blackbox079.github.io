@@ -6,7 +6,7 @@ categories = ['编程']
 tags = ['博客','Hugo']
 image = ''
 slug = '45d9727b'
-draft = true
+draft = false
 +++
 
 ## 安装
