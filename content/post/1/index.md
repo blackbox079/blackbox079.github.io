@@ -24,7 +24,7 @@ draft = false
 
 ### 常规安装
 
-如果是在本地使用，则需要安装 *Git* 、 *Go* 和 *Hugo extended*  。[**Scoop**](https://scoop.sh/) 是Windows平台的包管理器，可以选择使用它来进行安装。
+如果是在本地使用，则需要安装 *Git* 、 *Go* 和 *Hugo extended*  。[Scoop](https://scoop.sh/) 是Windows平台的包管理器，可以选择使用它来进行安装。
 
 ```bash
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser #打开PowerShell远程权限
@@ -50,6 +50,15 @@ git submodule add https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-them
 
 配置文件为 */config/_default/* 目录下的文件，按需修改配置。
 
+- *_languages.toml* 多语言
+- *config.toml* 域名和语言
+- *markup.toml* Markdown渲染器
+- *menu.toml* 社交媒体
+- *module.toml* 引入模块
+- *params.toml* 常规配置
+- *permalinks.toml* 链接地址
+- *related.toml* 相关内容
+
 ### 修改FrontMatter
 
 新建文件 */archetypes/default.md* ，粘贴新建博文的配置到该文件：    
@@ -68,12 +77,6 @@ draft = true
 
 ```
 
-### 修改链接格式
-
-```toml
-post = "/post/:slug/"
-```
-
 ## 使用
 
 ### 常用命令
@@ -87,15 +90,17 @@ post = "/post/:slug/"
 
 ### GitHub Pages
 
-在仓库中创建 *Codespaces* 。
+如果仓库名是 *用户名.github.io* ，会自动启用 GitHub Pages 。进入仓库将部署的分支改为 *gh-pages* ，然后等待自动部署完成即可。
+
+![修改分支](change-branch.png)
 
 ### 自定义域名
-
-将域名解析到 `ping` 获取的ip地址，并将域名配置到 GitHub Pages 。
 
 ```bash
 ping blackbox079.github.io
 ```
+
+将域名解析到 `ping` 获取的ip地址，并将域名配置到 GitHub Pages 。
 
 ## 参考
 
