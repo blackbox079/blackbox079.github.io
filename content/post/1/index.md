@@ -96,11 +96,13 @@ draft = true
 
 ### 自定义域名
 
-```bash
-ping blackbox079.github.io
-```
+首先将域名 CNAME 解析到 GitHub Pages ：
 
-将域名解析到 `ping` 获取的ip地址，并将域名配置到 GitHub Pages 。
+![解析域名](cname-domain.png)
+
+然后在仓库设置中绑定该域名并启用强制HTTPS：
+
+![绑定域名](custom-success.png)
 
 ## 参考
 
@@ -108,3 +110,4 @@ ping blackbox079.github.io
 - [关于自定义域名和 GitHub 页面 - GitHub 文档](https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages)
 - [Front matter | Hugo](https://gohugo.io/content-management/front-matter/)
 - [Hugo 永久链接 - Ramen's Box](https://blog.lxdlam.com/post/9cc3283b/)
+- [云解析 DNS 各记录类型说明及规则-操作指南-文档中心-腾讯云](https://cloud.tencent.com/document/product/302/38661)
