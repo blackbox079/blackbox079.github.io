@@ -1,6 +1,7 @@
 ---
-title: Example Category
+title: 编程
 description: A description of this category
+slug: coding
 image:
 
 # Badge style
