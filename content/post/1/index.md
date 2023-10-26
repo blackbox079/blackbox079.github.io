@@ -16,9 +16,11 @@ draft = false
 
 ### 快速启动
 
+主题提供[快速启动模板](https://github.com/CaiJimmy/hugo-theme-stack-starter)，点击 *Use this template* 并选择 *Create a new repository* 。
+
 ![使用模板](use-template.png)
 
-主题提供[快速启动模板](https://github.com/CaiJimmy/hugo-theme-stack-starter)，点击 *Use this template* 并选择 *Create a new repository* ，如需启用 GitHub Pages 则要将仓库设为公开。
+如需启用 GitHub Pages 则要将仓库设为公开。
 
 ![创建仓库](create-repository.png)
 
