@@ -1,13 +1,13 @@
-+++
-title = 'Hugo 博客搭建'
-description = '博客采用 Hugo 框架和 Stack 主题进行搭建，部署到 GitHub Pages 。'
-date = 2023-10-19T15:06:20+08:00
-categories = ['编程']
-tags = ['博客','Hugo']
-image = ''
-slug = '45d9727b'
-draft = false
-+++
+---
+title: Hugo 博客搭建
+description: 博客采用 Hugo 框架和 Stack 主题进行搭建，部署到 GitHub Pages 。
+date: 2023-10-19T15:06:20+08:00
+categories: 开发
+tags: ['博客','Hugo']
+image: 
+slug: 45d9727b
+draft: false
+---
 
 ## 安装
 
@@ -66,16 +66,16 @@ git submodule add https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-them
 新建文件 */archetypes/default.md* ，粘贴新建博文的配置到该文件：    
 
 ```md
-+++
-title = '{{ replace .Name "-" " " | title }}'
-description = ''
-date = {{ .Date }}
-categories = ['']
-tags = ['']
-image = ''
-slug = '{{ substr (md5 (printf "%s%s" .Date (replace .TranslationBaseName "-" " " | title))) 4 8 }}'
-draft = true
-+++
+---
+title: {{ replace .Name "-" " " | title }}
+description: 
+date: {{ .Date }}
+categories: 
+tags: ['']
+image: 
+slug: {{ substr (md5 (printf "%s%s" .Date (replace .TranslationBaseName "-" " " | title))) 4 8 }}
+draft: true
+---
 
 ```
 

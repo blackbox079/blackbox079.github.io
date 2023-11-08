@@ -1,13 +1,13 @@
-+++
-title = '帝国CMS整合一键排版和百度编辑器'
-description = '将编辑器更换为百度编辑器并增加一键排版，提升编辑使用体验。'
-date = 2023-10-26T13:56:17+08:00
-categories = ['编程']
-tags = ['帝国CMS']
-image = ''
-slug = 'c82eb1ea'
-draft = false
-+++
+---
+title: 帝国CMS整合一键排版和百度编辑器
+description: 将编辑器更换为百度编辑器并增加一键排版，提升编辑使用体验。
+date: 2023-10-26T13:56:17+08:00
+categories: 开发
+tags: ['帝国CMS']
+image: 
+slug: c82eb1ea
+draft: false
+---
 
 - [fex-team/ueditor: rich text 富文本编辑器](https://github.com/fex-team/ueditor)
 

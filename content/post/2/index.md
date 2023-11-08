@@ -1,13 +1,13 @@
-+++
-title = 'Git 基础使用'
-description = '持续缓更。'
-date = 2023-10-21T21:49:58+08:00
-categories = ['编程']
-tags = ['Git']
-image = ''
-slug = '0a8fca5e'
-draft = false
-+++
+---
+title: Git 基础使用
+description: 持续缓更。
+date: 2023-10-21T21:49:58+08:00
+categories: 开发
+tags: ['Git']
+image: 
+slug: 0a8fca5e
+draft: false
+---
 
 ## 安装
 
@@ -31,7 +31,7 @@ pacman -S git
 
 ### git config
 
-通常需要配置用户名和邮箱，*--global* 配置全局，*--local* 配置当前项目。
+配置用户名和邮箱，*--global* 配置全局，*--local* 配置当前项目。
 
 ```bash
 git config --global user.name yourname
@@ -46,7 +46,7 @@ git config --global user.email yourname@example.com
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
-运行后会在用户目录下创建 *.ssh* 文件夹并生成 *id_ed25519* 和 *id_ed25519.pub* ，其中 *id_ed25519.pub* 是公钥文件，将内容复制到剪贴板后添加到 GitHub 账号设置中即可。
+运行后会在用户目录下创建 *.ssh* 文件夹并生成 *id_ed25519* 和 *id_ed25519.pub* ，其中 *id_ed25519.pub* 是公钥文件，将内容复制到剪贴板后添加到 GitHub 账号设置中即可，其他 Git 托管平台操作方法也是一样的。
 
 ## 常用
 
@@ -60,4 +60,4 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 
 ## 参考
 
-- [生成新的 SSH 密钥并将其添加到 ssh-agent - GitHub 文档](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+- [新增 SSH 密钥到 GitHub 帐户 - GitHub 文档](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)

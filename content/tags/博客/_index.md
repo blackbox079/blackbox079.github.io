@@ -1,7 +1,7 @@
 ---
-title: 编程
-description: A description of this category
-slug: coding
+title: 博客
+description: 
+slug: blog
 image:
 
 # Badge style
