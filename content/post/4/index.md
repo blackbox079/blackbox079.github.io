@@ -9,7 +9,7 @@ slug: 29d67339
 draft: false
 ---
 
-使用 **puppeteer** 来进行爬取，并通过 *Node.js* 将数据存到文件。
+*puppeteer* 是由 *Chrome* 团队发布的 Node.js 库，通过 *DevTools* 协议来操作Chrome或Chromium浏览器。这里使用 **puppeteer** 来进行爬取，并通过 *Node.js* 将数据存储到文件。 
 
 ## 差异
 
@@ -26,7 +26,7 @@ async function checkNetwork() {
 }
 ```
 
-*puppeteer* 是通过无头浏览器（无图形界面的浏览器模式）进行访问，需要安装Chrome或Chromium。内地服务器无法打开 *google.com* 的话直接换成 *.cn* 域名后缀就行。
+*puppeteer* 是通过无头浏览器（无图形界面的浏览器模式）来进行访问，需要安装Chrome或Chromium。本地直接安装就行，内地服务器无法打开 *google.com* 的话直接换成 *.cn* 域名后缀就行。
 
 ```bash
 sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
@@ -142,7 +142,8 @@ processDataAndSave();
 
 ## 部署
 
-由于是在node环境里的，所以运行命令为 `node spotify.js` 。可以放到 *package.json* 的script部分，部署后选择该命令为启动选项即可。设置定时任务之后就可以脱手了。
+由于是在node环境里的，所以运行命令为 `node spotify.js` 。可以放到 *package.json* 的scripts部分，部署后选择该命令为启动选项即可。设置定时任务之后就可以脱手了。
+
 ![效果展示](data.png)
 
 ## 参考
