@@ -31,7 +31,7 @@ pacman -S git
 
 ### git config
 
-配置用户名和邮箱，*--global* 配置全局，*--local* 配置当前项目。
+配置用户名和邮箱，`--global` 配置全局，`--local` 配置当前项目。
 
 ```bash
 git config --global user.name yourname
