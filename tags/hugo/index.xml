@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on VTime Blog</title><link>https://blog.vtime.fun/tags/hugo/</link><description>Recent content in Hugo on VTime Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 19 Oct 2023 15:06:20 +0800</lastBuildDate><atom:link href="https://blog.vtime.fun/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo 博客搭建</title><link>https://blog.vtime.fun/post/45d9727b/</link><pubDate>Thu, 19 Oct 2023 15:06:20 +0800</pubDate><guid>https://blog.vtime.fun/post/45d9727b/</guid><description>&lt;h2 id="安装">安装&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://gohugo.io/" target="_blank" rel="noopener"
+>Hugo&lt;/a> 框架&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+>Stack&lt;/a> 主题&lt;/li>
+&lt;/ul>
+&lt;h3 id="快速启动">快速启动&lt;/h3>
+&lt;p>主题提供&lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack-starter" target="_blank" rel="noopener"
+>快速启动模板&lt;/a>，点击 &lt;em>Use this template&lt;/em> 并选择 &lt;em>Create a new repository&lt;/em> 。&lt;/p>
+&lt;p>&lt;img src="https://blog.vtime.fun/post/45d9727b/use-template.png"
+width="1089"
+height="744"
+srcset="https://blog.vtime.fun/post/45d9727b/use-template_huc823a46adae8a2a417e1e3705b4dd91b_111986_480x0_resize_box_3.png 480w, https://blog.vtime.fun/post/45d9727b/use-template_huc823a46adae8a2a417e1e3705b4dd91b_111986_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="使用模板"
+class="gallery-image"
+data-flex-grow="146"
+data-flex-basis="351px"
+>&lt;/p>
+&lt;p>如需启用 GitHub Pages 则要将仓库设为公开。&lt;/p>
+&lt;p>&lt;img src="https://blog.vtime.fun/post/45d9727b/create-repository.png"
+width="1087"
+height="849"
+srcset="https://blog.vtime.fun/post/45d9727b/create-repository_hub3b0da19ef5f2837509d74758ac84276_83225_480x0_resize_box_3.png 480w, https://blog.vtime.fun/post/45d9727b/create-repository_hub3b0da19ef5f2837509d74758ac84276_83225_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="创建仓库"
+class="gallery-image"
+data-flex-grow="128"
+data-flex-basis="307px"
+>&lt;/p>
+&lt;h3 id="常规安装">常规安装&lt;/h3>
+&lt;p>如果是在本地使用，则需要安装 &lt;em>Git&lt;/em> 、 &lt;em>Go&lt;/em> 和 &lt;em>Hugo extended&lt;/em> 。&lt;a class="link" href="https://scoop.sh/" target="_blank" rel="noopener"
+>Scoop&lt;/a> 是Windows平台的包管理器，可以选择使用它来进行安装。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">Set-ExecutionPolicy RemoteSigned -Scope CurrentUser &lt;span class="c1">#打开PowerShell远程权限&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">irm get.scoop.sh &lt;span class="p">|&lt;/span> iex &lt;span class="c1">#获取并安装Scoop&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Scoop 使用示例：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>scoop install hugo-extended&lt;/code> 安装Hugo&lt;/li>
+&lt;li>&lt;code>scoop update hugo-extended&lt;/code> 更新Hugo&lt;/li>
+&lt;/ul>
+&lt;p>创建站点并安装主题：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo new site Blog &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nb">cd&lt;/span> Blog &lt;span class="c1">#新建站点并切换到该目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git clone https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-theme-stack &lt;span class="c1">#将主题下载到本地&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git submodule add https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-theme-stack &lt;span class="c1">#设置主题为Git子模块&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="配置">配置&lt;/h2>
+&lt;h3 id="站点配置">站点配置&lt;/h3>
+&lt;p>配置文件为 &lt;em>/config/_default/&lt;/em> 目录下的文件，按需修改配置。&lt;/p>
+&lt;ul>
+&lt;li>&lt;em>_languages.toml&lt;/em> 多语言&lt;/li>
+&lt;li>&lt;em>config.toml&lt;/em> 域名和语言&lt;/li>
+&lt;li>&lt;em>markup.toml&lt;/em> Markdown渲染器&lt;/li>
+&lt;li>&lt;em>menu.toml&lt;/em> 社交媒体&lt;/li>
+&lt;li>&lt;em>module.toml&lt;/em> 引入模块&lt;/li>
+&lt;li>&lt;em>params.toml&lt;/em> 常规配置&lt;/li>
+&lt;li>&lt;em>permalinks.toml&lt;/em> 链接地址&lt;/li>
+&lt;li>&lt;em>related.toml&lt;/em> 相关内容&lt;/li>
+&lt;/ul>
+&lt;h3 id="修改frontmatter">修改FrontMatter&lt;/h3>
+&lt;p>新建文件 &lt;em>/archetypes/default.md&lt;/em> ，粘贴新建博文的配置到该文件：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-md" data-lang="md">&lt;span class="line">&lt;span class="cl">---
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">title: {{ replace .Name &amp;#34;-&amp;#34; &amp;#34; &amp;#34; | title }}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">description:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">date: {{ .Date }}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">categories:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">tags: [&amp;#39;&amp;#39;]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">image:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">slug: {{ substr (md5 (printf &amp;#34;%s%s&amp;#34; .Date (replace .TranslationBaseName &amp;#34;-&amp;#34; &amp;#34; &amp;#34; | title))) 4 8 }}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">draft: true
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">---
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="使用">使用&lt;/h2>
+&lt;h3 id="常用命令">常用命令&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>hugo new post/1/index.md&lt;/code> 新建文章&lt;/li>
+&lt;li>&lt;code>hugo server -D&lt;/code> 运行本地服务器，-D表示包含草稿，-p可指定端口&lt;/li>
+&lt;li>&lt;code>hugo&lt;/code> 生成静态文件，默认目录为public&lt;/li>
+&lt;li>&lt;code>hugo version&lt;/code> 查看Hugo版本&lt;/li>
+&lt;/ul>
+&lt;h2 id="部署">部署&lt;/h2>
+&lt;h3 id="github-pages">GitHub Pages&lt;/h3>
+&lt;p>如果仓库名是 &lt;em>用户名.github.io&lt;/em> ，会自动启用 GitHub Pages 。进入仓库将部署的分支改为 &lt;em>gh-pages&lt;/em> ，然后等待自动部署完成即可。&lt;/p>
+&lt;p>&lt;img src="https://blog.vtime.fun/post/45d9727b/change-branch.png"
+width="1903"
+height="855"
+srcset="https://blog.vtime.fun/post/45d9727b/change-branch_hu3a861703592d3d0dc75ea556e06395e3_110917_480x0_resize_box_3.png 480w, https://blog.vtime.fun/post/45d9727b/change-branch_hu3a861703592d3d0dc75ea556e06395e3_110917_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="修改分支"
+class="gallery-image"
+data-flex-grow="222"
+data-flex-basis="534px"
+>&lt;/p>
+&lt;h3 id="自定义域名">自定义域名&lt;/h3>
+&lt;p>首先将域名 CNAME 解析到 GitHub Pages ：&lt;/p>
+&lt;p>&lt;img src="https://blog.vtime.fun/post/45d9727b/cname-domain.png"
+width="626"
+height="46"
+srcset="https://blog.vtime.fun/post/45d9727b/cname-domain_huf0da2bbd3504d023ae85554052ac86be_2521_480x0_resize_box_3.png 480w, https://blog.vtime.fun/post/45d9727b/cname-domain_huf0da2bbd3504d023ae85554052ac86be_2521_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="解析域名"
+class="gallery-image"
+data-flex-grow="1360"
+data-flex-basis="3266px"
+>&lt;/p>
+&lt;p>然后在仓库设置中绑定该域名并启用强制HTTPS：&lt;/p>
+&lt;p>&lt;img src="https://blog.vtime.fun/post/45d9727b/custom-success.png"
+width="1087"
+height="944"
+srcset="https://blog.vtime.fun/post/45d9727b/custom-success_hu3732d3a0ddbf1279c08e584af134cabf_110716_480x0_resize_box_3.png 480w, https://blog.vtime.fun/post/45d9727b/custom-success_hu3732d3a0ddbf1279c08e584af134cabf_110716_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="绑定域名"
+class="gallery-image"
+data-flex-grow="115"
+data-flex-basis="276px"
+>&lt;/p>
+&lt;h2 id="参考">参考&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://stack.jimmycai.com/guide/getting-started" target="_blank" rel="noopener"
+>Getting Started | Stack&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages" target="_blank" rel="noopener"
+>关于自定义域名和 GitHub 页面 - GitHub 文档&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://gohugo.io/content-management/front-matter/" target="_blank" rel="noopener"
+>Front matter | Hugo&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://blog.lxdlam.com/post/9cc3283b/" target="_blank" rel="noopener"
+>Hugo 永久链接 - Ramen&amp;rsquo;s Box&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://cloud.tencent.com/document/product/302/38661" target="_blank" rel="noopener"
+>云解析 DNS 各记录类型说明及规则-操作指南-文档中心-腾讯云&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
